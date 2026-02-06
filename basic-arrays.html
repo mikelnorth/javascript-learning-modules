@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Array Methods Training | JavaScript Playground</title>
+    <meta
+      name="description"
+      content="Learn JavaScript array methods: push, pop, shift, unshift, slice, and splice with 7 interactive exercises."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, arrays, training, learn, push, pop, shift, unshift, slice, splice"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CodeMirror for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎯 JavaScript Array Methods Playground</h1>
+        <p class="subtitle">
+          Master essential array methods through hands-on practice
+        </p>
+        <div style="margin-top: 20px">
+          <a
+            href="index.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >← Back to Hub</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="loops.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Loops</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="advanced-arrays.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Advanced</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="utility-arrays.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Utility</a
+          >
+        </div>
+      </header>
+
+      <div class="intro-section">
+        <h2>📚 What You'll Learn</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <h3>.push()</h3>
+            <p>Add elements to the end of an array</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_push.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>.pop()</h3>
+            <p>Remove the last element from an array</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_pop.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>.shift()</h3>
+            <p>Remove the first element from an array</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_shift.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>.unshift()</h3>
+            <p>Add elements to the beginning of an array</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_unshift.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>.slice()</h3>
+            <p>Create a new array from a portion of another</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_slice_array.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>.splice()</h3>
+            <p>Remove, replace, or add elements at any position</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_splice.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-section" id="exercises">
+        <!-- Exercises will be dynamically loaded here -->
+      </div>
+
+      <div class="playground-section">
+        <h2>🎨 Free Practice Playground</h2>
+        <p>
+          Try any array method here! The console below will show your results.
+        </p>
+        <div class="editor-wrapper">
+          <textarea id="playgroundCode">
+// Try your own code here!
+const myArray = [1, 2, 3, 4, 5];
+console.log(myArray);
+myArray.push(6);
+console.log(myArray);</textarea
+          >
+        </div>
+        <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
+        <div class="console" id="playgroundConsole"></div>
+      </div>
+
+      <div class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p id="progressText">0 of 0 exercises completed</p>
+      </div>
+    </div>
+
+    <script src="exercises.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
