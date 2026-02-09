@@ -135,6 +135,30 @@ h1 {
   font-size: 1.4em;
 }
 
+.exercise-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.exercise.completed {
+  border-left-color: #28a745;
+}
+
+.exercise.completed .exercise-status {
+  background: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
 .exercise-links {
   display: flex;
   gap: 10px;

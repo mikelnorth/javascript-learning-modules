@@ -29,7 +29,7 @@ function loadExercises() {
 
     exerciseDiv.innerHTML = `
             ${categoryBadge}
-            <h3>${exercise.title}</h3>
+            <h3><span class="exercise-status" id="status-${exercise.id}"></span>${exercise.title}</h3>
             <div class="exercise-links">
                 <a href="${exercise.links.w3schools}" target="_blank">📖 W3Schools</a>
                 <a href="${exercise.links.mdn}" target="_blank">📚 MDN Docs</a>
@@ -495,6 +495,21 @@ function updateProgress() {
     document.getElementById("progressText").textContent =
       `🎉 Congratulations! You've completed all ${total} exercises!`;
   }
+
+  // Update individual exercise indicators
+  exercises.forEach(function(ex) {
+    const exerciseDiv = document.getElementById('exercise-' + ex.id);
+    const statusEl = document.getElementById('status-' + ex.id);
+    if (exerciseDiv && statusEl) {
+      if (completedExercises.has(ex.id)) {
+        exerciseDiv.classList.add('completed');
+        statusEl.textContent = '\u2713';
+      } else {
+        exerciseDiv.classList.remove('completed');
+        statusEl.textContent = '';
+      }
+    }
+  });
 }
 
 // Utility function to escape HTML
