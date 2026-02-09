@@ -1,188 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      JavaScript Arrays & Loops Training Hub | Interactive Learning Playground
-    </title>
-    <meta
-      name="description"
-      content="Master JavaScript arrays and loops with 54 interactive exercises across 4 comprehensive modules. Includes syntax highlighting and instant feedback."
-    />
-    <meta
-      name="keywords"
-      content="JavaScript, arrays, loops, training, learn, interactive, exercises, programming"
-    />
-    <meta name="author" content="Your Educational Institution" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Training Platform | Interactive Learning</title>
+    <meta name="description" content="Comprehensive JavaScript training with interactive exercises for arrays, objects, and more.">
+    <meta name="keywords" content="JavaScript, training, learn, interactive, exercises, programming, arrays, objects">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-      }
-
-      .container {
-        max-width: 900px;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        padding: 60px;
-        text-align: center;
-      }
-
-      h1 {
-        color: #667eea;
-        font-size: 3em;
-        margin-bottom: 20px;
-      }
-
-      .subtitle {
-        color: #666;
-        font-size: 1.3em;
-        margin-bottom: 50px;
-      }
-
-      .modules-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin-top: 40px;
-      }
-
-      @media (max-width: 768px) {
-        .modules-grid {
-          grid-template-columns: 1fr;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
 
-      .module-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 40px;
-        border-radius: 15px;
-        text-decoration: none;
-        display: block;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-      .module-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-      }
+        .container {
+            max-width: 1100px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 60px;
+            text-align: center;
+        }
 
-      .module-card h2 {
-        font-size: 2em;
-        margin-bottom: 15px;
-      }
+        h1 {
+            color: #667eea;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
 
-      .module-card p {
-        font-size: 1.1em;
-        opacity: 0.95;
-        line-height: 1.6;
-      }
+        .subtitle {
+            color: #666;
+            font-size: 1.3em;
+            margin-bottom: 50px;
+        }
 
-      .module-icon {
-        font-size: 3em;
-        margin-bottom: 20px;
-      }
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-      .footer {
-        margin-top: 50px;
-        color: #333;
-        font-size: 0.9em;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 20px;
-        border-radius: 10px;
-      }
+        .topic-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-decoration: none;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
 
-      .footer a {
-        color: #667eea;
-        text-decoration: underline;
-      }
+        .topic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .topic-card h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .topic-card p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .topic-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .topic-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+            position: relative;
+        }
+
+        .coming-soon::after {
+            content: 'COMING SOON';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #764ba2;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #333;
+            font-size: 0.9em;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <h1>🎯 JavaScript Training Hub</h1>
-      <p class="subtitle">Choose your learning path</p>
+        <h1>📚 JavaScript Training Platform</h1>
+        <p class="subtitle">Master JavaScript fundamentals through interactive exercises</p>
 
-      <div class="modules-grid">
-        <a href="basic-arrays.html" class="module-card">
-          <div class="module-icon">📊</div>
-          <h2>Array Methods</h2>
-          <p>
-            Master essential array manipulation methods: push, pop, shift,
-            unshift, slice, and splice
-          </p>
-          <p style="margin-top: 15px; font-size: 0.9em">
-            ✨ 7 Interactive Exercises
-          </p>
-        </a>
+        <div class="topics-grid">
+            <a href="arrays-hub.html" class="topic-card">
+                <div class="topic-icon">📊</div>
+                <h2>Arrays & Loops</h2>
+                <p>Complete array mastery with 4 comprehensive modules covering basic methods, loops, functional programming, and utility methods</p>
+                <div class="topic-badge">54 Interactive Exercises</div>
+            </a>
 
-        <a href="loops.html" class="module-card">
-          <div class="module-icon">🔄</div>
-          <h2>Loops & Iteration</h2>
-          <p>
-            Learn all JavaScript loop types: for, for...in, for...of, while, and
-            do...while
-          </p>
-          <p style="margin-top: 15px; font-size: 0.9em">
-            ✨ 15 Interactive Exercises
-          </p>
-        </a>
+            <a href="objects-hub.html" class="topic-card">
+                <div class="topic-icon">🎯</div>
+                <h2>Objects & Prototypes</h2>
+                <p>Complete object mastery with 7 comprehensive modules covering basics, manipulation, methods, modern features, this keyword, advanced patterns, and classes</p>
+                <div class="topic-badge">73 Interactive Exercises</div>
+            </a>
+        </div>
 
-        <a href="advanced-arrays.html" class="module-card">
-          <div class="module-icon">⚡</div>
-          <h2>Advanced Arrays</h2>
-          <p>
-            Master functional programming: forEach, map, filter, reduce, and
-            spread operator
-          </p>
-          <p style="margin-top: 15px; font-size: 0.9em">
-            ✨ 17 Interactive Exercises
-          </p>
-        </a>
-
-        <a href="utility-arrays.html" class="module-card">
-          <div class="module-icon">🔧</div>
-          <h2>Utility Methods</h2>
-          <p>
-            Essential utility methods: at, includes, join/split, find,
-            findIndex, sort, reverse, and more
-          </p>
-          <p style="margin-top: 15px; font-size: 0.9em">
-            ✨ 15 Interactive Exercises
-          </p>
-        </a>
-      </div>
-
-      <div class="footer">
-        <p>
-          💡 All modules include syntax highlighting, two-tier hints, strict
-          validation, and automatic variable display
-        </p>
-        <p style="margin-top: 10px; font-size: 0.85em">
-          📊 Total: 54 interactive exercises across 4 comprehensive modules
-        </p>
-      </div>
+        <div class="footer">
+            <p>
+                💡 All modules include syntax highlighting, two-tier hints, strict validation, and automatic variable display
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em;">
+                🚀 Built for effective learning with instant feedback and real-world examples
+            </p>
+        </div>
     </div>
-  </body>
+</body>
 </html>

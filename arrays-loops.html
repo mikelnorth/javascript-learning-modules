@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops & Iteration Training | JavaScript Playground</title>
+    <meta
+      name="description"
+      content="Master JavaScript loops: for, for...in, for...of, while, and do...while with 15 interactive exercises."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, loops, iteration, for loop, while loop, training"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CodeMirror for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔄 JavaScript Loops Playground</h1>
+        <p class="subtitle">
+          Master different loop types through hands-on practice
+        </p>
+        <div style="margin-top: 20px">
+          <a
+            href="arrays-hub.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >← Arrays Hub</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="arrays-basic.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Basic</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="arrays-advanced.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Advanced</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="arrays-utility.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Utility</a
+          >
+        </div>
+      </header>
+
+      <div class="intro-section">
+        <h2>📚 What You'll Learn</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <h3>for loop</h3>
+            <p>Classic loop with counter, condition, and increment</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_loop_for.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>for...in</h3>
+            <p>Iterate over object properties and array indices</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_forin.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>for...of</h3>
+            <p>Iterate over array values directly (modern approach)</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_forof.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>while</h3>
+            <p>Loop while a condition is true</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_loop_while.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>do...while</h3>
+            <p>Execute at least once, then check condition</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_loop_while.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-section" id="exercises">
+        <!-- Exercises will be dynamically loaded here -->
+      </div>
+
+      <div class="playground-section">
+        <h2>🎨 Free Practice Playground</h2>
+        <p>Try any loop here! The console below will show your results.</p>
+        <div class="editor-wrapper">
+          <textarea id="playgroundCode">
+// Try your own code here!
+const numbers = [1, 2, 3, 4, 5];
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}</textarea
+          >
+        </div>
+        <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
+        <div class="console" id="playgroundConsole"></div>
+      </div>
+
+      <div class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p id="progressText">0 of 0 exercises completed</p>
+      </div>
+    </div>
+
+    <script src="loop-exercises.js"></script>
+    <script src="loops-app.js"></script>
+  </body>
+</html>

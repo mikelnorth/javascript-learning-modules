@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Array Methods Training | JavaScript Playground</title>
+    <title>Classes & OOP Training | JavaScript Playground</title>
     <meta
       name="description"
-      content="Learn JavaScript array methods: push, pop, shift, unshift, slice, and splice with 7 interactive exercises."
+      content="Learn JavaScript ES6 classes and object-oriented programming with 15 interactive exercises."
     />
     <meta
       name="keywords"
-      content="JavaScript, arrays, training, learn, push, pop, shift, unshift, slice, splice"
+      content="JavaScript, classes, OOP, training, learn, inheritance, extends, super, constructor, getters, setters, static methods"
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>"
     />
     <link rel="stylesheet" href="styles.css" />
     <!-- CodeMirror for syntax highlighting -->
@@ -34,33 +34,33 @@
   <body>
     <div class="container">
       <header>
-        <h1>🎯 JavaScript Array Methods Playground</h1>
+        <h1>🏗️ JavaScript Classes & OOP</h1>
         <p class="subtitle">
-          Master essential array methods through hands-on practice
+          Master ES6 classes, inheritance, and object-oriented programming
         </p>
         <div style="margin-top: 20px">
           <a
-            href="index.html"
+            href="objects-hub.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >← Back to Hub</a
+            >← Objects Hub</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="loops.html"
-            style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Loops</a
-          >
-          <span style="margin: 0 15px; color: #ccc">|</span>
-          <a
-            href="advanced-arrays.html"
+            href="objects-advanced.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
             >Advanced</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="utility-arrays.html"
+            href="objects-this.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Utility</a
+            >The this Keyword</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-methods.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Object Methods</a
           >
         </div>
       </header>
@@ -69,96 +69,96 @@
         <h2>📚 What You'll Learn</h2>
         <div class="methods-grid">
           <div class="method-card">
-            <h3>.push()</h3>
-            <p>Add elements to the end of an array</p>
+            <h3>Class Syntax</h3>
+            <p>Create reusable object blueprints with ES6 classes</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_push.asp"
+                href="https://www.w3schools.com/js/js_classes.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.pop()</h3>
-            <p>Remove the last element from an array</p>
+            <h3>Constructor</h3>
+            <p>Initialize object instances with custom properties</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_pop.asp"
+                href="https://www.w3schools.com/js/js_class_intro.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.shift()</h3>
-            <p>Remove the first element from an array</p>
+            <h3>Inheritance</h3>
+            <p>Extend classes to create specialized versions</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_shift.asp"
+                href="https://www.w3schools.com/js/js_class_inheritance.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.unshift()</h3>
-            <p>Add elements to the beginning of an array</p>
+            <h3>Getters & Setters</h3>
+            <p>Control property access with computed values</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_unshift.asp"
+                href="https://www.w3schools.com/js/js_object_accessors.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.slice()</h3>
-            <p>Create a new array from a portion of another</p>
+            <h3>Static Methods</h3>
+            <p>Create utility functions on the class itself</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_slice_array.asp"
+                href="https://www.w3schools.com/js/js_class_static.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.splice()</h3>
-            <p>Remove, replace, or add elements at any position</p>
+            <h3>Private Fields</h3>
+            <p>Encapsulate data with # prefix for privacy</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_splice.asp"
+                href="https://www.w3schools.com/js/js_class_intro.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields"
                 target="_blank"
                 >MDN</a
               >
@@ -174,15 +174,34 @@
       <div class="playground-section">
         <h2>🎨 Free Practice Playground</h2>
         <p>
-          Try any array method here! The console below will show your results.
+          Try creating your own classes here! The console below will show your
+          results.
         </p>
         <div class="editor-wrapper">
           <textarea id="playgroundCode">
 // Try your own code here!
-const myArray = [1, 2, 3, 4, 5];
-console.log(myArray);
-myArray.push(6);
-console.log(myArray);</textarea
+class Animal {
+  constructor(name, sound) {
+    this.name = name;
+    this.sound = sound;
+  }
+  speak() {
+    return this.name + " says " + this.sound;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name, "Woof!");
+  }
+  fetch(item) {
+    return this.name + " fetches the " + item;
+  }
+}
+
+const dog = new Dog("Buddy");
+console.log(dog.speak());
+console.log(dog.fetch("ball"));</textarea
           >
         </div>
         <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
@@ -198,7 +217,7 @@ console.log(myArray);</textarea
       </div>
     </div>
 
-    <script src="exercises.js"></script>
-    <script src="app.js"></script>
+    <script src="objects-classes-exercises.js"></script>
+    <script src="objects-classes-app.js"></script>
   </body>
 </html>

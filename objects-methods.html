@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Methods Training | JavaScript Playground</title>
+    <meta
+      name="description"
+      content="Learn JavaScript Object static methods and iteration patterns with 14 interactive exercises."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, objects, Object.keys, Object.values, Object.entries, for...in, Object.assign, hasOwnProperty, training, learn"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CodeMirror for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔧 JavaScript Object Methods</h1>
+        <p class="subtitle">
+          Master essential Object static methods and iteration patterns
+        </p>
+        <div style="margin-top: 20px">
+          <a
+            href="objects-hub.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >← Objects Hub</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-basics.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Basics</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-manipulation.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Manipulation</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-modern.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Modern Features</a
+          >
+        </div>
+      </header>
+
+      <div class="intro-section">
+        <h2>📚 What You'll Learn</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <h3>Object.keys()</h3>
+            <p>Get an array of an object's property names</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_keys.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Object.values()</h3>
+            <p>Get an array of an object's property values</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_values.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Object.entries()</h3>
+            <p>Get an array of [key, value] pairs</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_entries.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>for...in Loop</h3>
+            <p>Iterate over object keys</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_forin.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Object.assign()</h3>
+            <p>Merge or clone objects</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_object_assign.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>hasOwnProperty()</h3>
+            <p>Check if property belongs to object</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_hasownproperty.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-section" id="exercises">
+        <!-- Exercises will be dynamically loaded here -->
+      </div>
+
+      <div class="playground-section">
+        <h2>🎨 Free Practice Playground</h2>
+        <p>
+          Try working with Object methods here! The console below will show your
+          results.
+        </p>
+        <div class="editor-wrapper">
+          <textarea id="playgroundCode">
+// Try your own code here!
+const person = {
+  name: "Alice",
+  age: 25,
+  city: "NYC"
+};
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person));</textarea
+          >
+        </div>
+        <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
+        <div class="console" id="playgroundConsole"></div>
+      </div>
+
+      <div class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p id="progressText">0 of 0 exercises completed</p>
+      </div>
+    </div>
+
+    <script src="objects-methods-exercises.js"></script>
+    <script src="objects-methods-app.js"></script>
+  </body>
+</html>

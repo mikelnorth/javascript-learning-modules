@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      JavaScript Arrays & Loops Training Hub | Interactive Learning Playground
+    </title>
+    <meta
+      name="description"
+      content="Master JavaScript arrays and loops with 54 interactive exercises across 4 comprehensive modules. Includes syntax highlighting and instant feedback."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, arrays, loops, training, learn, interactive, exercises, programming"
+    />
+    <meta name="author" content="Your Educational Institution" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 60px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #667eea;
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        color: #666;
+        font-size: 1.3em;
+        margin-bottom: 50px;
+      }
+
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-top: 40px;
+      }
+
+      @media (max-width: 768px) {
+        .modules-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .module-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        border-radius: 15px;
+        text-decoration: none;
+        display: block;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .module-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .module-card h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+      }
+
+      .module-card p {
+        font-size: 1.1em;
+        opacity: 0.95;
+        line-height: 1.6;
+      }
+
+      .module-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .footer {
+        margin-top: 50px;
+        color: #333;
+        font-size: 0.9em;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .footer a {
+        color: #667eea;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📊 Arrays & Loops Training</h1>
+      <p class="subtitle">Master JavaScript arrays and iteration</p>
+      <div style="margin-bottom: 30px;">
+        <a href="index.html" style="color: #667eea; text-decoration: none; font-size: 1.1em; font-weight: bold;">← Back to Main Hub</a>
+      </div>
+
+      <div class="modules-grid">
+        <a href="arrays-basic.html" class="module-card">
+          <div class="module-icon">📊</div>
+          <h2>Array Methods</h2>
+          <p>
+            Master essential array manipulation methods: push, pop, shift,
+            unshift, slice, and splice
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 7 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="arrays-loops.html" class="module-card">
+          <div class="module-icon">🔄</div>
+          <h2>Loops & Iteration</h2>
+          <p>
+            Learn all JavaScript loop types: for, for...in, for...of, while, and
+            do...while
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 15 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="arrays-advanced.html" class="module-card">
+          <div class="module-icon">⚡</div>
+          <h2>Advanced Arrays</h2>
+          <p>
+            Master functional programming: forEach, map, filter, reduce, and
+            spread operator
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 17 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="arrays-utility.html" class="module-card">
+          <div class="module-icon">🔧</div>
+          <h2>Utility Methods</h2>
+          <p>
+            Essential utility methods: at, includes, join/split, find,
+            findIndex, sort, reverse, and more
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 15 Interactive Exercises
+          </p>
+        </a>
+      </div>
+
+      <div class="footer">
+        <p>
+          💡 All modules include syntax highlighting, two-tier hints, strict
+          validation, and automatic variable display
+        </p>
+        <p style="margin-top: 10px; font-size: 0.85em">
+          📊 Total: 54 interactive exercises across 4 comprehensive modules
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Objects Training | JavaScript Playground</title>
+    <meta
+      name="description"
+      content="Learn advanced JavaScript object concepts with 12 interactive exercises on references, cloning, and prototypes."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, objects, advanced, training, learn, references, shallow copy, deep copy, prototype, freeze, seal"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CodeMirror for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔄 Advanced JavaScript Objects</h1>
+        <p class="subtitle">
+          Master references, cloning, immutability, and prototypes
+        </p>
+        <div style="margin-top: 20px">
+          <a
+            href="objects-hub.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >← Objects Hub</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-this.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >The this Keyword</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-methods.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Object Methods</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-classes.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Classes</a
+          >
+        </div>
+      </header>
+
+      <div class="intro-section">
+        <h2>📚 What You'll Learn</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <h3>Object References</h3>
+            <p>Understand how objects are stored by reference</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_properties.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Shallow & Deep Copy</h3>
+            <p>Learn different ways to clone objects</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/react/react_es6_spread.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Object.freeze()</h3>
+            <p>Make objects completely immutable</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_object_freeze.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Object.seal()</h3>
+            <p>Prevent adding or removing properties</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_object_seal.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/seal"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Prototype Chain</h3>
+            <p>Master prototypal inheritance</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_prototypes.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Factory Functions</h3>
+            <p>Create objects without constructors</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_constructors.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-section" id="exercises">
+        <!-- Exercises will be dynamically loaded here -->
+      </div>
+
+      <div class="playground-section">
+        <h2>🎨 Free Practice Playground</h2>
+        <p>
+          Try your own object cloning and prototype experiments here! The
+          console below will show your results.
+        </p>
+        <div class="editor-wrapper">
+          <textarea id="playgroundCode">
+// Try your own code here!
+const original = { name: "Alice", scores: [90, 85] };
+const clone = structuredClone(original);
+clone.name = "Bob";
+clone.scores.push(100);
+console.log("Original:", original);
+console.log("Clone:", clone);</textarea
+          >
+        </div>
+        <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
+        <div class="console" id="playgroundConsole"></div>
+      </div>
+
+      <div class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p id="progressText">0 of 0 exercises completed</p>
+      </div>
+    </div>
+
+    <script src="objects-advanced-exercises.js"></script>
+    <script src="objects-advanced-app.js"></script>
+  </body>
+</html>

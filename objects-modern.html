@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Object Features Training | JavaScript Playground</title>
+    <meta
+      name="description"
+      content="Master modern JavaScript object features with 12 interactive exercises."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, objects, destructuring, optional chaining, spread operator, JSON, training, learn"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CodeMirror for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>⚡ Modern Object Features</h1>
+        <p class="subtitle">
+          Master destructuring, optional chaining, spread, and JSON
+        </p>
+        <div style="margin-top: 20px">
+          <a
+            href="objects-hub.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >← Objects Hub</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-basics.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Basics</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-methods.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Object Methods</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-this.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >The this Keyword</a
+          >
+        </div>
+      </header>
+
+      <div class="intro-section">
+        <h2>📚 What You'll Learn</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <h3>Destructuring</h3>
+            <p>Extract properties into variables easily</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/react/react_es6_destructuring.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Optional Chaining (?.)</h3>
+            <p>Safely access nested properties</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_accessors.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Nullish Coalescing (??)</h3>
+            <p>Set defaults for null/undefined values</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_operators.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Spread Operator</h3>
+            <p>Clone and merge objects efficiently</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/react/react_es6_spread.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>JSON.stringify()</h3>
+            <p>Convert objects to JSON strings</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_json_stringify.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>JSON.parse()</h3>
+            <p>Convert JSON strings to objects</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_json_parse.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-section" id="exercises">
+        <!-- Exercises will be dynamically loaded here -->
+      </div>
+
+      <div class="playground-section">
+        <h2>🎨 Free Practice Playground</h2>
+        <p>
+          Try modern object features here! The console below will show your
+          results.
+        </p>
+        <div class="editor-wrapper">
+          <textarea id="playgroundCode">
+// Try your own code here!
+const user = {
+  name: "Alice",
+  age: 25,
+  address: { city: "NYC" }
+};
+const { name, age } = user;
+console.log(name, age);
+console.log(user?.address?.city);
+console.log(JSON.stringify(user, null, 2));</textarea
+          >
+        </div>
+        <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
+        <div class="console" id="playgroundConsole"></div>
+      </div>
+
+      <div class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p id="progressText">0 of 0 exercises completed</p>
+      </div>
+    </div>
+
+    <script src="objects-modern-exercises.js"></script>
+    <script src="objects-modern-app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      JavaScript Objects Training Hub | Interactive Learning Playground
+    </title>
+    <meta
+      name="description"
+      content="Master JavaScript objects and object-oriented programming with 73 interactive exercises across 7 comprehensive modules. Includes syntax highlighting and instant feedback."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, objects, OOP, training, learn, interactive, exercises, programming"
+    />
+    <meta name="author" content="Your Educational Institution" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 60px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #667eea;
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        color: #666;
+        font-size: 1.3em;
+        margin-bottom: 50px;
+      }
+
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+      }
+
+      @media (max-width: 768px) {
+        .modules-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .module-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        border-radius: 15px;
+        text-decoration: none;
+        display: block;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .module-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .module-card h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+      }
+
+      .module-card p {
+        font-size: 1.1em;
+        opacity: 0.95;
+        line-height: 1.6;
+      }
+
+      .module-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .footer {
+        margin-top: 50px;
+        color: #333;
+        font-size: 0.9em;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .footer a {
+        color: #667eea;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎯 Objects & OOP Training</h1>
+      <p class="subtitle">Master JavaScript objects and object-oriented programming</p>
+      <div style="margin-bottom: 30px;">
+        <a href="index.html" style="color: #667eea; text-decoration: none; font-size: 1.1em; font-weight: bold;">← Back to Main Hub</a>
+      </div>
+
+      <div class="modules-grid">
+        <a href="objects-basics.html" class="module-card">
+          <div class="module-icon">📦</div>
+          <h2>Objects Basics</h2>
+          <p>
+            Master object creation, property access using dot and bracket notation, methods, and constructors
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 10 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="objects-manipulation.html" class="module-card">
+          <div class="module-icon">✏️</div>
+          <h2>Object Manipulation</h2>
+          <p>
+            Learn to add, update, and delete properties with dot notation, bracket notation, and ES6 features
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 10 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="objects-methods.html" class="module-card">
+          <div class="module-icon">🔧</div>
+          <h2>Object Methods</h2>
+          <p>
+            Master Object.keys(), Object.values(), Object.entries(), for...in loops, and Object.assign()
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 14 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="objects-modern.html" class="module-card">
+          <div class="module-icon">⚡</div>
+          <h2>Modern Features</h2>
+          <p>
+            Master destructuring, optional chaining, nullish coalescing, spread operator, and JSON
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 12 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="objects-this.html" class="module-card">
+          <div class="module-icon">🎯</div>
+          <h2>The this Keyword</h2>
+          <p>
+            Understand how this works in methods, arrow functions, constructors, and with bind/call/apply
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 10 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="objects-advanced.html" class="module-card">
+          <div class="module-icon">🔄</div>
+          <h2>Advanced Objects</h2>
+          <p>
+            Master object references, cloning, Object.freeze(), Object.seal(), prototypes, and factory functions
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 12 Interactive Exercises
+          </p>
+        </a>
+
+        <a href="objects-classes.html" class="module-card">
+          <div class="module-icon">🏗️</div>
+          <h2>Classes & OOP</h2>
+          <p>
+            Master ES6 classes, inheritance, getters/setters, static methods, private fields, and polymorphism
+          </p>
+          <p style="margin-top: 15px; font-size: 0.9em">
+            ✨ 15 Interactive Exercises
+          </p>
+        </a>
+      </div>
+
+      <div class="footer">
+        <p>
+          💡 All modules include syntax highlighting, two-tier hints, strict
+          validation, and automatic variable display
+        </p>
+        <p style="margin-top: 10px; font-size: 0.85em">
+          📊 Total: 73 interactive exercises across 7 comprehensive modules
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

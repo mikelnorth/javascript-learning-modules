@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Manipulation Training | JavaScript Playground</title>
+    <meta
+      name="description"
+      content="Learn JavaScript object manipulation: adding, updating, and deleting properties with 10 interactive exercises."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, objects, properties, manipulation, training, add, update, delete, ES6"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CodeMirror for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>✏️ JavaScript Object Manipulation</h1>
+        <p class="subtitle">
+          Master adding, updating, and deleting object properties
+        </p>
+        <div style="margin-top: 20px">
+          <a
+            href="objects-hub.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >← Objects Hub</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-basics.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Basics</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-methods.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Object Methods</a
+          >
+          <span style="margin: 0 15px; color: #ccc">|</span>
+          <a
+            href="objects-modern.html"
+            style="color: #667eea; text-decoration: none; font-weight: bold"
+            >Modern Features</a
+          >
+        </div>
+      </header>
+
+      <div class="intro-section">
+        <h2>📚 What You'll Learn</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <h3>Add Properties</h3>
+            <p>Add new properties using dot or bracket notation</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_properties.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Update Properties</h3>
+            <p>Modify existing property values</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_properties.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Delete Operator</h3>
+            <p>Remove properties from objects</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/jsref/jsref_delete.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>ES6 Shorthand</h3>
+            <p>Use modern property shorthand syntax</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_es5.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#property_definitions"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Computed Names</h3>
+            <p>Use expressions as property keys</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_es5.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#computed_property_names"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-section" id="exercises">
+        <!-- Exercises will be dynamically loaded here -->
+      </div>
+
+      <div class="playground-section">
+        <h2>🎨 Free Practice Playground</h2>
+        <p>
+          Try manipulating objects here! The console below will show your
+          results.
+        </p>
+        <div class="editor-wrapper">
+          <textarea id="playgroundCode">
+// Try your own code here!
+const user = { name: "Alice" };
+user.age = 25;  // Add property
+user.name = "Alice Smith";  // Update property
+delete user.age;  // Delete property
+console.log(user);</textarea
+          >
+        </div>
+        <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
+        <div class="console" id="playgroundConsole"></div>
+      </div>
+
+      <div class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p id="progressText">0 of 0 exercises completed</p>
+      </div>
+    </div>
+
+    <script src="objects-manipulation-exercises.js"></script>
+    <script src="objects-manipulation-app.js"></script>
+  </body>
+</html>

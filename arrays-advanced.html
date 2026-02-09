@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Utility Array Methods Training | JavaScript Playground</title>
+    <title>Advanced Array Methods Training | JavaScript Playground</title>
     <meta
       name="description"
-      content="Learn essential utility methods: at, includes, find, sort, reverse, and more. 15 interactive exercises."
+      content="Master functional programming with forEach, map, filter, reduce, and spread operator. 17 interactive exercises."
     />
     <meta
       name="keywords"
-      content="JavaScript, arrays, utility methods, find, includes, sort, reverse"
+      content="JavaScript, functional programming, map, filter, reduce, forEach, spread operator"
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
     />
     <link rel="stylesheet" href="styles.css" />
     <!-- CodeMirror for syntax highlighting -->
@@ -34,33 +34,33 @@
   <body>
     <div class="container">
       <header>
-        <h1>🔧 Utility Array Methods Playground</h1>
+        <h1>⚡ Advanced Array Methods Playground</h1>
         <p class="subtitle">
-          Master essential utility methods for arrays and strings
+          Master functional programming with modern array methods
         </p>
         <div style="margin-top: 20px">
           <a
-            href="index-nav.html"
+            href="arrays-hub.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >← Back to Hub</a
+            >← Arrays Hub</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="index.html"
+            href="arrays-basic.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
             >Basic</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="loops.html"
+            href="arrays-loops.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
             >Loops</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="advanced-arrays.html"
+            href="arrays-utility.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Advanced</a
+            >Utility</a
           >
         </div>
       </header>
@@ -69,128 +69,80 @@
         <h2>📚 What You'll Learn</h2>
         <div class="methods-grid">
           <div class="method-card">
-            <h3>.at()</h3>
-            <p>Access elements with negative indices</p>
+            <h3>.forEach()</h3>
+            <p>Execute a function for each array element</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_at.asp"
+                href="https://www.w3schools.com/jsref/jsref_foreach.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.includes()</h3>
-            <p>Check if array contains a value</p>
+            <h3>.map()</h3>
+            <p>Transform each element and create a new array</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_includes_array.asp"
+                href="https://www.w3schools.com/jsref/jsref_map.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.join() / .split()</h3>
-            <p>Convert between arrays and strings</p>
+            <h3>.filter()</h3>
+            <p>Create a new array with elements that pass a test</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_join.asp"
+                href="https://www.w3schools.com/jsref/jsref_filter.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.find()</h3>
-            <p>Find first element matching condition</p>
+            <h3>.reduce()</h3>
+            <p>Reduce an array to a single value</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_find.asp"
+                href="https://www.w3schools.com/jsref/jsref_reduce.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.findIndex()</h3>
-            <p>Find index of first matching element</p>
+            <h3>Spread (...)</h3>
+            <p>Expand arrays and objects inline</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_findindex.asp"
+                href="https://www.w3schools.com/react/react_es6_spread.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex"
-                target="_blank"
-                >MDN</a
-              >
-            </div>
-          </div>
-          <div class="method-card">
-            <h3>.sort() / .toSorted()</h3>
-            <p>Sort arrays (mutating vs non-mutating)</p>
-            <div class="card-links">
-              <a
-                href="https://www.w3schools.com/jsref/jsref_sort.asp"
-                target="_blank"
-                >W3Schools</a
-              >
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
-                target="_blank"
-                >MDN</a
-              >
-            </div>
-          </div>
-          <div class="method-card">
-            <h3>.reverse() / .toReversed()</h3>
-            <p>Reverse arrays (mutating vs non-mutating)</p>
-            <div class="card-links">
-              <a
-                href="https://www.w3schools.com/jsref/jsref_reverse.asp"
-                target="_blank"
-                >W3Schools</a
-              >
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse"
-                target="_blank"
-                >MDN</a
-              >
-            </div>
-          </div>
-          <div class="method-card">
-            <h3>Array.isArray()</h3>
-            <p>Check if value is an array</p>
-            <div class="card-links">
-              <a
-                href="https://www.w3schools.com/jsref/jsref_isarray.asp"
-                target="_blank"
-                >W3Schools</a
-              >
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
                 target="_blank"
                 >MDN</a
               >
@@ -212,8 +164,8 @@
           <textarea id="playgroundCode">
 // Try your own code here!
 const numbers = [1, 2, 3, 4, 5];
-const lastItem = numbers.at(-1);
-console.log(lastItem); // 5</textarea
+const doubled = numbers.map(n => n * 2);
+console.log(doubled);</textarea
           >
         </div>
         <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
@@ -229,7 +181,7 @@ console.log(lastItem); // 5</textarea
       </div>
     </div>
 
-    <script src="utility-exercises.js"></script>
-    <script src="utility-app.js"></script>
+    <script src="advanced-exercises.js"></script>
+    <script src="advanced-app.js"></script>
   </body>
 </html>

@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced Array Methods Training | JavaScript Playground</title>
+    <title>The this Keyword Training | JavaScript Playground</title>
     <meta
       name="description"
-      content="Master functional programming with forEach, map, filter, reduce, and spread operator. 17 interactive exercises."
+      content="Learn JavaScript's this keyword with 10 interactive exercises covering methods, bind, call, and apply."
     />
     <meta
       name="keywords"
-      content="JavaScript, functional programming, map, filter, reduce, forEach, spread operator"
+      content="JavaScript, this keyword, training, learn, bind, call, apply, methods, arrow functions"
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
     />
     <link rel="stylesheet" href="styles.css" />
     <!-- CodeMirror for syntax highlighting -->
@@ -34,33 +34,33 @@
   <body>
     <div class="container">
       <header>
-        <h1>⚡ Advanced Array Methods Playground</h1>
+        <h1>🎯 The `this` Keyword</h1>
         <p class="subtitle">
-          Master functional programming with modern array methods
+          Understand how `this` works in different JavaScript contexts
         </p>
         <div style="margin-top: 20px">
           <a
-            href="index.html"
+            href="objects-hub.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >← Back to Hub</a
+            >← Objects Hub</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="basic-arrays.html"
+            href="objects-modern.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Basic</a
+            >Modern Features</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="loops.html"
+            href="objects-advanced.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Loops</a
+            >Advanced</a
           >
           <span style="margin: 0 15px; color: #ccc">|</span>
           <a
-            href="utility-arrays.html"
+            href="objects-classes.html"
             style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Utility</a
+            >Classes</a
           >
         </div>
       </header>
@@ -69,80 +69,96 @@
         <h2>📚 What You'll Learn</h2>
         <div class="methods-grid">
           <div class="method-card">
-            <h3>.forEach()</h3>
-            <p>Execute a function for each array element</p>
+            <h3>this in Methods</h3>
+            <p>How this refers to the object in methods</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_foreach.asp"
+                href="https://www.w3schools.com/js/js_this.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.map()</h3>
-            <p>Transform each element and create a new array</p>
+            <h3>Arrow Functions & this</h3>
+            <p>Why arrow functions don't have their own this</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_map.asp"
+                href="https://www.w3schools.com/js/js_arrow_function.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.filter()</h3>
-            <p>Create a new array with elements that pass a test</p>
+            <h3>bind()</h3>
+            <p>Create functions with fixed this value</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_filter.asp"
+                href="https://www.w3schools.com/js/js_function_bind.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>.reduce()</h3>
-            <p>Reduce an array to a single value</p>
+            <h3>call()</h3>
+            <p>Invoke functions with specific this value</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/jsref/jsref_reduce.asp"
+                href="https://www.w3schools.com/js/js_function_call.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"
                 target="_blank"
                 >MDN</a
               >
             </div>
           </div>
           <div class="method-card">
-            <h3>Spread (...)</h3>
-            <p>Expand arrays and objects inline</p>
+            <h3>apply()</h3>
+            <p>Like call() but with array arguments</p>
             <div class="card-links">
               <a
-                href="https://www.w3schools.com/react/react_es6_spread.asp"
+                href="https://www.w3schools.com/js/js_function_apply.asp"
                 target="_blank"
                 >W3Schools</a
               >
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"
+                target="_blank"
+                >MDN</a
+              >
+            </div>
+          </div>
+          <div class="method-card">
+            <h3>Constructor this</h3>
+            <p>How this works in constructor functions</p>
+            <div class="card-links">
+              <a
+                href="https://www.w3schools.com/js/js_object_constructors.asp"
+                target="_blank"
+                >W3Schools</a
+              >
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"
                 target="_blank"
                 >MDN</a
               >
@@ -158,14 +174,23 @@
       <div class="playground-section">
         <h2>🎨 Free Practice Playground</h2>
         <p>
-          Try any array method here! The console below will show your results.
+          Try creating your own code here! The console below will show your
+          results.
         </p>
         <div class="editor-wrapper">
           <textarea id="playgroundCode">
 // Try your own code here!
-const numbers = [1, 2, 3, 4, 5];
-const doubled = numbers.map(n => n * 2);
-console.log(doubled);</textarea
+const person = {
+  name: "Alice",
+  greet() {
+    return "Hi, I'm " + this.name;
+  }
+};
+console.log(person.greet());
+
+// Try bind
+const greetFn = person.greet.bind(person);
+console.log(greetFn());</textarea
           >
         </div>
         <button onclick="runPlaygroundCode()" class="btn-run">Run Code</button>
@@ -181,7 +206,7 @@ console.log(doubled);</textarea
       </div>
     </div>
 
-    <script src="advanced-exercises.js"></script>
-    <script src="advanced-app.js"></script>
+    <script src="objects-this-exercises.js"></script>
+    <script src="objects-this-app.js"></script>
   </body>
 </html>
