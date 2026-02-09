@@ -71,6 +71,72 @@ function initCodeEditor(exerciseId) {
     matchBrackets: true,
     readOnly: false,
     viewportMargin: Infinity,
+    extraKeys: {
+      "Ctrl-Space": "autocomplete",
+    },
+    hintOptions: {
+      completeSingle: false,
+      hint: function (editor) {
+        var cur = editor.getCursor();
+        var token = editor.getTokenAt(cur);
+        var prevToken = editor.getTokenAt({line: cur.line, ch: token.start});
+
+        // Dot notation: evaluate the object before the dot to get its properties
+        if (prevToken.string === "." || (token.string === "." && token.start === token.end - 1)) {
+          var dotCh = prevToken.string === "." ? prevToken.start : token.start;
+          var lineText = editor.getLine(cur.line).substring(0, dotCh);
+          var objMatch = lineText.match(/([\w$.\[\]'"]+)\s*$/);
+          if (objMatch) {
+            try {
+              var code = editor.getValue();
+              var lines = code.split("\n").slice(0, cur.line);
+              lines.push(editor.getLine(cur.line).substring(0, dotCh));
+              var evalCode = lines.join("\n");
+              var obj = (new Function(evalCode + "; return " + objMatch[1] + ";"))();
+              if (obj != null) {
+                var props = [];
+                for (var key in obj) { props.push(key); }
+                Object.getOwnPropertyNames(obj).forEach(function (p) { if (props.indexOf(p) === -1) props.push(p); });
+                if (typeof obj === "object" || typeof obj === "function") {
+                  var proto = Object.getPrototypeOf(obj);
+                  while (proto && proto !== Object.prototype) {
+                    Object.getOwnPropertyNames(proto).forEach(function (p) { if (props.indexOf(p) === -1) props.push(p); });
+                    proto = Object.getPrototypeOf(proto);
+                  }
+                }
+                var partial = prevToken.string === "." ? token.string : "";
+                if (partial === ".") partial = "";
+                var filtered = partial ? props.filter(function (p) { return p.indexOf(partial) === 0 && p !== partial; }) : props;
+                filtered.sort();
+                if (filtered.length > 0) {
+                  var from = prevToken.string === "." ? {line: cur.line, ch: token.start} : {line: cur.line, ch: cur.ch};
+                  return { list: filtered, from: from, to: cur };
+                }
+              }
+            } catch (e) { /* ignore eval errors, fall through to default hints */ }
+          }
+        }
+
+        var jsHint = CodeMirror.hint.javascript(editor) || { list: [], from: editor.getCursor(), to: editor.getCursor() };
+        var anyHint = CodeMirror.hint.anyword(editor) || { list: [], from: editor.getCursor(), to: editor.getCursor() };
+        var seen = new Set(jsHint.list);
+        anyHint.list.forEach(function (item) { if (!seen.has(item)) jsHint.list.push(item); });
+        return jsHint;
+      },
+    },
+  });
+
+  editor.on("inputRead", function (cm, change) {
+    if (change.origin !== "+input") return;
+    var cur = cm.getCursor();
+    var token = cm.getTokenAt(cur);
+    if (change.text[0] === ".") {
+      cm.showHint({ completeSingle: false });
+      return;
+    }
+    if (token.type && token.type !== "comment" && token.string.length >= 2) {
+      cm.showHint({ completeSingle: false });
+    }
   });
 
   // Ensure editor is focused and ready for input
@@ -95,6 +161,72 @@ function initPlaygroundEditor() {
     matchBrackets: true,
     readOnly: false,
     viewportMargin: Infinity,
+    extraKeys: {
+      "Ctrl-Space": "autocomplete",
+    },
+    hintOptions: {
+      completeSingle: false,
+      hint: function (editor) {
+        var cur = editor.getCursor();
+        var token = editor.getTokenAt(cur);
+        var prevToken = editor.getTokenAt({line: cur.line, ch: token.start});
+
+        // Dot notation: evaluate the object before the dot to get its properties
+        if (prevToken.string === "." || (token.string === "." && token.start === token.end - 1)) {
+          var dotCh = prevToken.string === "." ? prevToken.start : token.start;
+          var lineText = editor.getLine(cur.line).substring(0, dotCh);
+          var objMatch = lineText.match(/([\w$.\[\]'"]+)\s*$/);
+          if (objMatch) {
+            try {
+              var code = editor.getValue();
+              var lines = code.split("\n").slice(0, cur.line);
+              lines.push(editor.getLine(cur.line).substring(0, dotCh));
+              var evalCode = lines.join("\n");
+              var obj = (new Function(evalCode + "; return " + objMatch[1] + ";"))();
+              if (obj != null) {
+                var props = [];
+                for (var key in obj) { props.push(key); }
+                Object.getOwnPropertyNames(obj).forEach(function (p) { if (props.indexOf(p) === -1) props.push(p); });
+                if (typeof obj === "object" || typeof obj === "function") {
+                  var proto = Object.getPrototypeOf(obj);
+                  while (proto && proto !== Object.prototype) {
+                    Object.getOwnPropertyNames(proto).forEach(function (p) { if (props.indexOf(p) === -1) props.push(p); });
+                    proto = Object.getPrototypeOf(proto);
+                  }
+                }
+                var partial = prevToken.string === "." ? token.string : "";
+                if (partial === ".") partial = "";
+                var filtered = partial ? props.filter(function (p) { return p.indexOf(partial) === 0 && p !== partial; }) : props;
+                filtered.sort();
+                if (filtered.length > 0) {
+                  var from = prevToken.string === "." ? {line: cur.line, ch: token.start} : {line: cur.line, ch: cur.ch};
+                  return { list: filtered, from: from, to: cur };
+                }
+              }
+            } catch (e) { /* ignore eval errors, fall through to default hints */ }
+          }
+        }
+
+        var jsHint = CodeMirror.hint.javascript(editor) || { list: [], from: editor.getCursor(), to: editor.getCursor() };
+        var anyHint = CodeMirror.hint.anyword(editor) || { list: [], from: editor.getCursor(), to: editor.getCursor() };
+        var seen = new Set(jsHint.list);
+        anyHint.list.forEach(function (item) { if (!seen.has(item)) jsHint.list.push(item); });
+        return jsHint;
+      },
+    },
+  });
+
+  editor.on("inputRead", function (cm, change) {
+    if (change.origin !== "+input") return;
+    var cur = cm.getCursor();
+    var token = cm.getTokenAt(cur);
+    if (change.text[0] === ".") {
+      cm.showHint({ completeSingle: false });
+      return;
+    }
+    if (token.type && token.type !== "comment" && token.string.length >= 2) {
+      cm.showHint({ completeSingle: false });
+    }
   });
 
   // Ensure editor is focused and ready for input
