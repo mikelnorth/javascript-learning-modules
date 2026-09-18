@@ -124,6 +124,13 @@ const DOT_COMPLETIONS = Array.from(
   new Set(ARRAY_MEMBERS.concat(STRING_MEMBERS)),
 ).sort();
 
+const KEYWORD_COMPLETIONS = (
+  "const let var function return if else for while do break continue " +
+  "switch case default new typeof instanceof true false null undefined " +
+  "console Math JSON Array Object String Number Boolean Date Map Set " +
+  "parseInt parseFloat isNaN Infinity NaN alert prompt setTimeout"
+).split(" ");
+
 const IDENTIFIER_TOKEN_TYPES = new Set([
   "variable",
   "variable-2",
@@ -173,15 +180,16 @@ function hintFunction(cm) {
     };
   }
 
-  // Identifier completion from the JavaScript keyword list plus words already
-  // in the editor.
+  // Identifier completion: words already in the editor, then a curated list
+  // of keywords and globals. (CodeMirror's javascript hint enumerates every
+  // property of window, which surfaces this app's own functions.)
   if (!IDENTIFIER_TOKEN_TYPES.has(token.type)) return null;
   const word = token.string;
-  const jsHint = CodeMirror.hint.javascript(cm) || { list: [] };
   const anyHint = CodeMirror.hint.anyword(cm) || { list: [] };
   const seen = new Set();
   const list = [];
-  jsHint.list.concat(anyHint.list).forEach((item) => {
+  const keywordMatches = KEYWORD_COMPLETIONS.filter((k) => k.startsWith(word));
+  anyHint.list.concat(keywordMatches).forEach((item) => {
     const text = typeof item === "string" ? item : item.text;
     if (text === word || seen.has(text)) return;
     seen.add(text);

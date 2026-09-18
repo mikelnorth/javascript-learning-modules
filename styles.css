@@ -548,14 +548,16 @@ ul.CodeMirror-hints {
   z-index: 100;
 }
 
-.CodeMirror-hint {
+/* Same specificity bump as above so these beat the vendor's black-on-white
+   item colors. */
+ul.CodeMirror-hints .CodeMirror-hint {
   color: #f8f8f2;
   padding: 4px 8px;
   cursor: pointer;
   white-space: nowrap;
 }
 
-li.CodeMirror-hint-active {
+ul.CodeMirror-hints li.CodeMirror-hint-active {
   background: #44475a;
   color: #50fa7b;
 }
