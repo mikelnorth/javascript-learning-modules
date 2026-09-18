@@ -152,6 +152,27 @@ function hintFunction(cm) {
     };
   }
 
+  // Inside a string literal: offer words that already appear in the editor
+  // (so 'br' suggests 'bread'). The replacement range must cover the letters
+  // typed so far; an earlier version used an empty range here, which turned
+  // 'br' + accept into 'brbread'.
+  if (token.type === "string") {
+    const wordMatch = beforeCursor.match(/([A-Za-z_$][\w$]*)$/);
+    if (!wordMatch) return null;
+    const partial = wordMatch[1];
+    const anyHint = CodeMirror.hint.anyword(cm) || { list: [] };
+    const list = anyHint.list.filter((item) => {
+      const text = typeof item === "string" ? item : item.text;
+      return text !== partial;
+    });
+    if (list.length === 0) return null;
+    return {
+      list,
+      from: CodeMirror.Pos(cur.line, cur.ch - partial.length),
+      to: cur,
+    };
+  }
+
   // Identifier completion from the JavaScript keyword list plus words already
   // in the editor.
   if (!IDENTIFIER_TOKEN_TYPES.has(token.type)) return null;
@@ -228,9 +249,15 @@ function createEditor(textarea, options) {
       cm.showHint({ completeSingle: false });
       return;
     }
-    const token = cm.getTokenAt(cm.getCursor());
+    const cur = cm.getCursor();
+    const token = cm.getTokenAt(cur);
     if (IDENTIFIER_TOKEN_TYPES.has(token.type) && token.string.length >= 3) {
       cm.showHint({ completeSingle: false });
+      return;
+    }
+    if (token.type === "string") {
+      const word = cm.getLine(cur.line).slice(0, cur.ch).match(/[A-Za-z_$][\w$]*$/);
+      if (word && word[0].length >= 2) cm.showHint({ completeSingle: false });
     }
   });
 
