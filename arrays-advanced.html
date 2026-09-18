@@ -20,23 +20,23 @@
     <!-- CodeMirror for syntax highlighting -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+      href="vendor/codemirror/codemirror.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+      href="vendor/codemirror/theme/dracula.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css"
+      href="vendor/codemirror/addon/hint/show-hint.min.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/javascript-hint.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/anyword-hint.min.js"></script>
+    <script src="vendor/codemirror/codemirror.min.js"></script>
+    <script src="vendor/codemirror/mode/javascript/javascript.min.js"></script>
+    <script src="vendor/codemirror/addon/edit/closebrackets.min.js"></script>
+    <script src="vendor/codemirror/addon/edit/matchbrackets.min.js"></script>
+    <script src="vendor/codemirror/addon/hint/show-hint.min.js"></script>
+    <script src="vendor/codemirror/addon/hint/javascript-hint.min.js"></script>
+    <script src="vendor/codemirror/addon/hint/anyword-hint.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -45,32 +45,22 @@
         <p class="subtitle">
           Master functional programming with modern array methods
         </p>
-        <div style="margin-top: 20px">
-          <a
-            href="arrays-hub.html"
-            style="color: #667eea; text-decoration: none; font-weight: bold"
-            >← Arrays Hub</a
-          >
-          <span style="margin: 0 15px; color: #ccc">|</span>
-          <a
-            href="arrays-basic.html"
-            style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Basic</a
-          >
-          <span style="margin: 0 15px; color: #ccc">|</span>
-          <a
-            href="arrays-loops.html"
-            style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Loops</a
-          >
-          <span style="margin: 0 15px; color: #ccc">|</span>
-          <a
-            href="arrays-utility.html"
-            style="color: #667eea; text-decoration: none; font-weight: bold"
-            >Utility</a
-          >
-        </div>
+        <nav class="module-nav" aria-label="Arrays modules">
+          <a href="arrays-hub.html">← Arrays Hub</a>
+          <a href="arrays-basic.html">Basic</a>
+          <a href="arrays-loops.html">Loops</a>
+          <a href="arrays-advanced.html" aria-current="page">Advanced</a>
+          <a href="arrays-utility.html">Utility</a>
+        </nav>
       </header>
+
+      <div class="progress-sticky">
+        <span class="progress-sticky-label">Progress</span>
+        <div class="progress-bar" aria-hidden="true">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p id="progressText" role="status" aria-live="polite">0 of 0 exercises completed</p>
+      </div>
 
       <div class="intro-section">
         <h2>📚 What You'll Learn</h2>
@@ -82,11 +72,13 @@
               <a
                 href="https://www.w3schools.com/jsref/jsref_foreach.asp"
                 target="_blank"
+                rel="noopener"
                 >W3Schools</a
               >
               <a
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
                 target="_blank"
+                rel="noopener"
                 >MDN</a
               >
             </div>
@@ -98,11 +90,13 @@
               <a
                 href="https://www.w3schools.com/jsref/jsref_map.asp"
                 target="_blank"
+                rel="noopener"
                 >W3Schools</a
               >
               <a
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
                 target="_blank"
+                rel="noopener"
                 >MDN</a
               >
             </div>
@@ -114,11 +108,13 @@
               <a
                 href="https://www.w3schools.com/jsref/jsref_filter.asp"
                 target="_blank"
+                rel="noopener"
                 >W3Schools</a
               >
               <a
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
                 target="_blank"
+                rel="noopener"
                 >MDN</a
               >
             </div>
@@ -130,11 +126,13 @@
               <a
                 href="https://www.w3schools.com/jsref/jsref_reduce.asp"
                 target="_blank"
+                rel="noopener"
                 >W3Schools</a
               >
               <a
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
                 target="_blank"
+                rel="noopener"
                 >MDN</a
               >
             </div>
@@ -146,11 +144,13 @@
               <a
                 href="https://www.w3schools.com/react/react_es6_spread.asp"
                 target="_blank"
+                rel="noopener"
                 >W3Schools</a
               >
               <a
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
                 target="_blank"
+                rel="noopener"
                 >MDN</a
               >
             </div>
@@ -168,7 +168,7 @@
           Try any array method here! The console below will show your results.
         </p>
         <div class="editor-wrapper">
-          <textarea id="playgroundCode">
+          <textarea id="playgroundCode" aria-label="Free practice playground code">
 // Try your own code here!
 const numbers = [1, 2, 3, 4, 5];
 const doubled = numbers.map(n => n * 2);
@@ -180,20 +180,27 @@ console.log(doubled);</textarea
       </div>
 
       <div class="progress-section">
-        <h3>Your Progress</h3>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progressBar"></div>
-        </div>
-        <p id="progressText">0 of 0 exercises completed</p>
+        <h3>Save / Restore Progress</h3>
+        <p>
+          Your progress is saved in this browser. Export it to a file to move
+          it to another computer, or import a file you saved earlier.
+        </p>
         <div class="progress-buttons">
           <button onclick="exportProgress()" class="btn-export">Export Progress (.js)</button>
           <button onclick="importProgress()" class="btn-import">Import Progress</button>
           <button onclick="clearAllProgress()" class="btn-clear">Clear All Progress</button>
         </div>
       </div>
+
+      <footer class="page-footer">
+        <p>
+          Part of the <a href="arrays-hub.html">Arrays &amp; Loops Training Hub</a>
+          &middot; <a href="index.html">Main Hub</a>
+        </p>
+      </footer>
     </div>
 
     <script src="advanced-exercises.js"></script>
-    <script src="advanced-app.js"></script>
+    <script src="array-app.js" data-module="advancedArrays" data-progress-key="advancedArraysProgress"></script>
   </body>
 </html>

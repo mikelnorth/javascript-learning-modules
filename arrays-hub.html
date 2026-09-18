@@ -114,8 +114,30 @@
       }
 
       .footer a {
-        color: #667eea;
+        color: #3f51c4;
         text-decoration: underline;
+      }
+
+      .back-link {
+        display: inline-block;
+        color: #3f51c4;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 6px 14px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+      }
+
+      .back-link:hover {
+        background: #e8eaf6;
+        text-decoration: underline;
+      }
+
+      a:focus-visible {
+        outline: 3px solid #ffb86c;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px #282a36;
       }
     </style>
   </head>
@@ -123,8 +145,8 @@
     <div class="container">
       <h1>📊 Arrays & Loops Training</h1>
       <p class="subtitle">Master JavaScript arrays and iteration</p>
-      <div style="margin-bottom: 30px;">
-        <a href="index.html" style="color: #667eea; text-decoration: none; font-size: 1.1em; font-weight: bold;">← Back to Main Hub</a>
+      <div>
+        <a href="index.html" class="back-link">← Main Hub</a>
       </div>
 
       <div class="modules-grid">
