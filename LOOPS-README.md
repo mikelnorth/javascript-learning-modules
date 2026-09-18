@@ -14,7 +14,7 @@ This training playground teaches the following loop types:
 
 ## 🚀 Getting Started
 
-1. Open `loops.html` in your web browser
+1. Open `arrays-loops.html` in your web browser
 2. Read through each exercise carefully
 3. Write your code in the provided text area
 4. Click "Run Exercise" to test your solution
@@ -132,9 +132,12 @@ Students will be able to:
 
 ## 🔗 Navigation
 
-- `index-nav.html` - Main hub to choose between modules
-- `index.html` - Array Methods training
-- `loops.html` - Loops training (this module)
+- `index.html` - Top-level hub (arrays and objects)
+- `arrays-hub.html` - Arrays hub to choose between modules
+- `arrays-basic.html` - Basic Array Methods
+- `arrays-loops.html` - Loops & Iteration (this module)
+- `arrays-advanced.html` - Advanced Arrays
+- `arrays-utility.html` - Utility Methods
 
 ---
 

@@ -27,7 +27,7 @@ A complete, self-contained JavaScript training platform with:
 - No backend required
 - No build process needed
 - Works completely offline
-- All dependencies loaded from CDN
+- CodeMirror is vendored in `vendor/codemirror/` (no CDN dependency)
 
 ## 🎯 Quick Start (Local Testing)
 
@@ -138,7 +138,7 @@ python3 -m http.server 8000
 - [ ] Test with real students (beta test)
 - [ ] Add Google Analytics (track usage)
 - [ ] Create CONTRIBUTING.md if open source
-- [ ] Add LICENSE file
+- [x] Add LICENSE file (fill in the copyright holder placeholder)
 
 ### Nice to Have:
 
@@ -321,7 +321,7 @@ python3 -m http.server 8000
 ### When Students Get Stuck:
 
 1. **First hint** - Gives conceptual guidance
-2. **Solution hint** - Requires 6+ clicks or cancel button
+2. **Solution reveal** - A solution-reveal button appears after the hint is opened or after two failed runs; one inline confirmation, no browser dialogs
 3. **Office hours** - Personal help
 4. **Peer help** - Encourage collaboration
 5. **Documentation** - W3Schools/MDN links provided
@@ -384,6 +384,6 @@ python3 -m http.server 8000
 
 ---
 
-**Remember:** The goal is learning, not just completing exercises. Encourage students to understand WHY solutions work, not just copy code. The gatekeeping system is designed to build good problem-solving habits!
+**Remember:** The goal is learning, not just completing exercises. Encourage students to understand WHY solutions work, not just copy code. The hint-before-solution flow is a nudge toward good problem-solving habits, not a control (all solutions ship in the exercise JS files).
 
 Good luck teaching! 🎉

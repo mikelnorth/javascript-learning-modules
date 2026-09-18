@@ -14,7 +14,7 @@ This training playground teaches advanced array methods:
 
 ## 🚀 Getting Started
 
-1. Open `advanced-arrays.html` in your web browser
+1. Open `arrays-advanced.html` in your web browser
 2. Read through each exercise carefully
 3. Write your code in the provided text area
 4. Click "Run Exercise" to test your solution
@@ -133,12 +133,16 @@ This training playground teaches advanced array methods:
 1. **Basic Arrays** - push, pop, shift, unshift, slice, splice
 2. **Loops** - for, for...in, for...of, while, do...while
 3. **Advanced Arrays** ← You are here!
+4. **Utility Methods** - at, includes, join/split, find, findIndex, sort/toSorted, reverse/toReversed, Array.isArray
 
 ### Why This Order:
 
 - Basic methods teach array manipulation
 - Loops teach iteration fundamentals
 - Advanced methods combine both into functional programming
+- Utility methods round out the everyday toolkit once callbacks are familiar
+
+Note: this module uses arrow-function callbacks from its very first example, so students should have seen `(x) => ...` syntax before starting.
 
 ### From Loops to Functional:
 
@@ -167,10 +171,12 @@ Students will be able to:
 
 ## 🔗 Navigation
 
-- `index-nav.html` - Main hub to choose between modules
-- `index.html` - Basic Array Methods
-- `loops.html` - Loops & Iteration
-- `advanced-arrays.html` - Advanced Arrays (this module)
+- `index.html` - Top-level hub (arrays and objects)
+- `arrays-hub.html` - Arrays hub to choose between modules
+- `arrays-basic.html` - Basic Array Methods
+- `arrays-loops.html` - Loops & Iteration
+- `arrays-advanced.html` - Advanced Arrays (this module)
+- `arrays-utility.html` - Utility Methods
 
 ---
 

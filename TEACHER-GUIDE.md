@@ -4,6 +4,13 @@
 
 This training suite provides 54 interactive exercises across 4 modules to teach JavaScript arrays and loops. Each exercise includes instant validation, helpful hints, and automatic variable display.
 
+## 🧭 Before Class
+
+- **Scope for a first arrays lesson:** the Basic module plus the first half of Utility (`at`, `includes`, `join`/`split`, `find`, `findIndex`). Save sorting, reversing, and `Array.isArray` for a later session.
+- **Advanced module prerequisite:** it uses arrow-function callbacks from its first example. Make sure students have seen `(x) => ...` syntax before assigning it.
+- **Solutions are not hidden:** every solution ships in the exercise JS files and is readable in browser devtools. The hint-before-solution flow is a nudge, not a control.
+- **Validators check results, not technique:** an exercise passes if the final values are right, so a hard-coded answer can pass. Review student code if technique matters for your grading.
+
 ## 🎯 Learning Objectives
 
 By completing all modules, students will be able to:
@@ -93,7 +100,7 @@ By completing all modules, students will be able to:
 
 ### During Exercises:
 
-1. **Encourage hint use** - But let gatekeeping teach persistence
+1. **Encourage hint use** - The solution reveal only appears after the hint is opened or after two failed runs, which nudges students to try first
 2. **Monitor progress** - Watch for students stuck on same exercise
 3. **Pair programming** - Struggling students work together
 4. **Celebrate success** - Acknowledge when exercises pass

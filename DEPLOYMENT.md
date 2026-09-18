@@ -19,8 +19,8 @@
 
 ### 1. File Structure & Naming
 
-- [x] Rename `index-nav.html` to `index.html` (make it the landing page)
-- [x] Rename current `index.html` to `basic-arrays.html`
+- [x] `index.html` is the landing hub (links to `arrays-hub.html` and `objects-hub.html`)
+- [x] Array modules use `arrays-*.html` names (`arrays-basic.html`, `arrays-loops.html`, `arrays-advanced.html`, `arrays-utility.html`)
 - [x] Update all internal links to reflect new filenames
 - [ ] Create a favicon.ico file
 - [x] Organize files into logical structure
@@ -34,16 +34,16 @@
 
 ### 3. Performance
 
-- [ ] Consider CDN fallbacks for CodeMirror
+- [x] CodeMirror vendored in `vendor/codemirror/` (no CDN dependency)
 - [x] No external API calls (works offline)
 - [x] LocalStorage for progress (optional, degrades gracefully)
 - [ ] Add loading states for exercises
 
 ### 4. SEO & Meta Tags
 
-- [ ] Add proper meta descriptions to each page
+- [x] Add proper meta descriptions to each page
 - [ ] Add Open Graph tags for social sharing
-- [ ] Add keywords meta tags
+- [x] Add keywords meta tags
 - [ ] Create a sitemap.xml
 
 ### 5. Analytics (Optional)
@@ -69,8 +69,8 @@
 ### 8. Documentation
 
 - [x] README files for each module
-- [ ] Teacher's guide (how to use in classroom)
-- [ ] Installation instructions
+- [x] Teacher's guide (how to use in classroom) - `TEACHER-GUIDE.md`
+- [x] Installation instructions - `SETUP.md`
 - [ ] Troubleshooting guide
 
 ### 9. Security
@@ -116,10 +116,10 @@
 
 ### Must Do Before Going Live:
 
-1. **Rename files for better URLs:**
-   - `index-nav.html` → `index.html` (landing page)
-   - `index.html` → `basic-arrays.html`
-   - Update all hrefs accordingly
+1. **Rename files for better URLs:** (done)
+   - `index.html` is the landing page
+   - Array modules are `arrays-basic.html`, `arrays-loops.html`, `arrays-advanced.html`, `arrays-utility.html`
+   - All hrefs updated
 
 2. **Add meta tags to all pages:**
 
@@ -148,7 +148,7 @@
    - Show "Loading..." while CodeMirror initializes
    - Prevents confusion on slower connections
 
-6. **Create TEACHER-GUIDE.md:**
+6. **Create TEACHER-GUIDE.md:** (done, see `TEACHER-GUIDE.md`)
    - How to assign exercises
    - Expected learning outcomes
    - Common student mistakes
@@ -165,8 +165,8 @@
 - [ ] Add service worker for offline use
 - [ ] Add print stylesheets
 - [ ] Add dark/light mode toggle
-- [ ] Add export progress feature
-- [ ] Add reset progress button
+- [x] Add export progress feature (export/import buttons)
+- [x] Add reset progress button (clear button)
 - [ ] Add exercise timer
 - [ ] Add achievements/badges
 
