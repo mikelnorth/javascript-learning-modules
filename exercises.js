@@ -23,7 +23,7 @@ shoppingCart.push('eggs');`,
       w3schools: "https://www.w3schools.com/jsref/jsref_push.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push",
     },
-    validate: function (code, output) {
+    validate: function (code, output, ctx) {
       try {
         if (!code.includes(".push(")) {
           return {
@@ -31,10 +31,11 @@ shoppingCart.push('eggs');`,
             message: "Make sure you're using the .push() method.",
           };
         }
-        // Extract the shoppingCart array value
-        const cartMatch = output.match(/shoppingCart:\s*\[([\s\S]*?)\]/);
+        const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+        const vars = (ctx && ctx.vars) || {};
+        const cart = vars.shoppingCart;
 
-        if (!cartMatch) {
+        if (!Array.isArray(cart)) {
           return {
             success: false,
             message:
@@ -42,13 +43,8 @@ shoppingCart.push('eggs');`,
           };
         }
 
-        const cartValue = cartMatch[0];
-
-        // Check that it has milk, bread, and eggs
-        const hasCorrectOutput =
-          cartValue.includes("milk") &&
-          cartValue.includes("bread") &&
-          cartValue.includes("eggs");
+        // The final cart must be exactly milk, bread, eggs (one push of one item)
+        const hasCorrectOutput = same(cart, ["milk", "bread", "eggs"]);
 
         if (hasCorrectOutput) {
           return {
@@ -240,7 +236,7 @@ priorities.unshift('high');`,
       w3schools: "https://www.w3schools.com/jsref/jsref_unshift.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift",
     },
-    validate: function (code, output) {
+    validate: function (code, output, ctx) {
       if (!code.includes(".unshift(")) {
         return {
           success: false,
@@ -248,10 +244,11 @@ priorities.unshift('high');`,
         };
       }
 
-      // Extract the priorities array value
-      const prioritiesMatch = output.match(/priorities:\s*\[([\s\S]*?)\]/);
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const priorities = vars.priorities;
 
-      if (!prioritiesMatch) {
+      if (!Array.isArray(priorities)) {
         return {
           success: false,
           message:
@@ -259,15 +256,8 @@ priorities.unshift('high');`,
         };
       }
 
-      const prioritiesValue = prioritiesMatch[0];
-
-      // Check that priorities has high, medium, low in that order
-      const hasCorrectOutput =
-        prioritiesValue.includes("high") &&
-        prioritiesValue.includes("medium") &&
-        prioritiesValue.includes("low") &&
-        prioritiesValue.indexOf("high") < prioritiesValue.indexOf("medium") &&
-        prioritiesValue.indexOf("medium") < prioritiesValue.indexOf("low");
+      // Priorities must be exactly high, medium, low in that order
+      const hasCorrectOutput = same(priorities, ["high", "medium", "low"]);
 
       if (hasCorrectOutput) {
         return {
@@ -361,7 +351,7 @@ const weekdays = week.slice(0, 5);`,
         return {
           success: false,
           message:
-            "The weekdays array should only contain Monday through Friday (5 days). Use .slice(0, 5).",
+            "The weekdays array should only contain Monday through Friday (5 days). Check your start index and remember the end index is not included.",
         };
       }
       return {
@@ -445,7 +435,7 @@ playlist.splice(2, 1, 'NewSong');`,
         return {
           success: false,
           message:
-            "OldSong should be removed. Use .splice(2, 1, 'NewSong') to replace it.",
+            "OldSong is still in the playlist. Remember that splice's second argument is how many items to remove at the start index.",
         };
       }
       return {
@@ -462,7 +452,7 @@ playlist.splice(2, 1, 'NewSong');`,
     id: 7,
     title: "Challenge: Combining Methods",
     description:
-      "Now let's combine what you've learned! You can chain multiple array methods together to perform complex operations.",
+      "Now let's combine what you've learned! You can call several array methods in sequence, one after another, to perform more complex operations.",
     example: `const tasks = ['task1', 'task2', 'task3'];
 tasks.push('task4');        // Add to end
 tasks.shift();              // Remove from beginning

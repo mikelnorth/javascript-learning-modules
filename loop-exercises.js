@@ -24,27 +24,22 @@ for (let i = 1; i <= 10; i++) {
       w3schools: "https://www.w3schools.com/js/js_loop_for.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for",
     },
-    validate: function (code, output) {
-      if (!code.includes("for")) {
+    validate: function (code, output, ctx) {
+      if (!/\bfor\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for loop.",
         };
       }
-      const numbersMatch = output.match(/numbers:\s*\[([\s\S]*?)\]/);
-      if (!numbersMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const numbers = vars.numbers;
+      if (!Array.isArray(numbers)) {
         return { success: false, message: "Could not find the numbers array." };
       }
-      const numbersValue = numbersMatch[0];
-      // Check for the number 0 as a separate element (not the digit in 10)
-      const hasZero = numbersValue.match(/[\[\s,]0[\s,\]]/);
-      const has11 = numbersValue.includes("11");
-      const hasCorrectNumbers =
-        numbersValue.includes("1") &&
-        numbersValue.includes("10") &&
-        !has11 &&
-        !hasZero &&
-        numbersValue.indexOf("1") < numbersValue.indexOf("10");
+      const hasZero = numbers.includes(0);
+      const has11 = numbers.includes(11);
+      const hasCorrectNumbers = same(numbers, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
       if (hasCorrectNumbers) {
         return {
           success: true,
@@ -100,7 +95,7 @@ for (let i = 0; i < numbers.length; i++) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for",
     },
     validate: function (code, output) {
-      if (!code.includes("for")) {
+      if (!/\bfor\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for loop.",
@@ -163,7 +158,7 @@ for (let i = original.length - 1; i >= 0; i--) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for",
     },
     validate: function (code, output) {
-      if (!code.includes("for")) {
+      if (!/\bfor\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for loop.",
@@ -239,13 +234,13 @@ for (let key in student) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in",
     },
     validate: function (code, output) {
-      if (!code.includes("for") || !code.includes("in")) {
+      if (!/for\s*\([^)]*\bin\b/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for...in loop.",
         };
       }
-      if (code.includes("of")) {
+      if (/for\s*\([^)]*\bof\b/.test(code)) {
         return {
           success: false,
           message: "Use for...in (not for...of) for this exercise.",
@@ -303,13 +298,13 @@ for (let index in items) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in",
     },
     validate: function (code, output) {
-      if (!code.includes("for") || !code.includes("in")) {
+      if (!/for\s*\([^)]*\bin\b/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for...in loop.",
         };
       }
-      if (code.includes("of")) {
+      if (/for\s*\([^)]*\bof\b/.test(code)) {
         return {
           success: false,
           message: "Use for...in (not for...of) for this exercise.",
@@ -371,7 +366,7 @@ for (let fruit of fruits) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of",
     },
     validate: function (code, output) {
-      if (!code.includes("for") || !code.includes("of")) {
+      if (!/for\s*\([^)]*\bof\b/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for...of loop.",
@@ -441,7 +436,7 @@ for (let num of numbers) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of",
     },
     validate: function (code, output) {
-      if (!code.includes("for") || !code.includes("of")) {
+      if (!/for\s*\([^)]*\bof\b/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for...of loop.",
@@ -498,7 +493,7 @@ for (let word of words) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of",
     },
     validate: function (code, output) {
-      if (!code.includes("for") || !code.includes("of")) {
+      if (!/for\s*\([^)]*\bof\b/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a for...of loop.",
@@ -576,7 +571,7 @@ while (counter > 0) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while",
     },
     validate: function (code, output) {
-      if (!code.includes("while")) {
+      if (!/\bwhile\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a while loop.",
@@ -659,7 +654,7 @@ while (i < numbers.length) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while",
     },
     validate: function (code, output) {
-      if (!code.includes("while")) {
+      if (!/\bwhile\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a while loop.",
@@ -725,7 +720,7 @@ do {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while",
     },
     validate: function (code, output) {
-      if (!code.includes("do") || !code.includes("while")) {
+      if (!/\bdo\s*\{/.test(code) || !/\}\s*while\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a do...while loop.",
@@ -805,13 +800,13 @@ do {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while",
     },
     validate: function (code, output) {
-      if (!code.includes("do") || !code.includes("while")) {
+      if (!/\bdo\s*\{/.test(code) || !/\}\s*while\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a do...while loop.",
         };
       }
-      if (!code.includes("> 10")) {
+      if (!/counter\s*>\s*10|10\s*<\s*counter/.test(code)) {
         return {
           success: false,
           message:
@@ -889,35 +884,24 @@ for (let item of items) {
       w3schools: "https://www.w3schools.com/js/js_loop_for.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration",
     },
-    validate: function (code, output) {
-      if (!code.includes("for") || !code.includes("of")) {
+    validate: function (code, output, ctx) {
+      if (!/\bfor\s*\(/.test(code) || !/for\s*\([^)]*\bof\b/.test(code)) {
         return {
           success: false,
           message:
             "Make sure you're using both a for loop AND a for...of loop.",
         };
       }
-      const positionsMatch = output.match(/positions:\s*\[([\s\S]*?)\]/);
-      const valuesMatch = output.match(/values:\s*\[([\s\S]*?)\]/);
-      if (!positionsMatch || !valuesMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const positions = vars.positions;
+      const values = vars.values;
+      if (!Array.isArray(positions) || !Array.isArray(values)) {
         return { success: false, message: "Could not find both arrays." };
       }
-      const positionsValue = positionsMatch[0];
-      const valuesValue = valuesMatch[0];
 
-      // Extract just the array content
-      const positionsContent = positionsValue.match(/\[([\s\S]*)\]/)[1];
-      const valuesContent = valuesValue.match(/\[([\s\S]*)\]/)[1];
-
-      const hasCorrectPositions =
-        positionsContent.includes("0") &&
-        positionsContent.includes("4") &&
-        !positionsContent.includes("5") &&
-        !positionsContent.includes("-1");
-      const hasCorrectValues =
-        valuesContent.includes("a") &&
-        valuesContent.includes("e") &&
-        valuesContent.indexOf("a") < valuesContent.indexOf("e");
+      const hasCorrectPositions = same(positions, [0, 1, 2, 3, 4]);
+      const hasCorrectValues = same(values, ["a", "b", "c", "d", "e"]);
 
       if (hasCorrectPositions && hasCorrectValues) {
         return {
@@ -964,7 +948,7 @@ while (queue.length > 0) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while",
     },
     validate: function (code, output) {
-      if (!code.includes("while")) {
+      if (!/\bwhile\s*\(/.test(code)) {
         return {
           success: false,
           message: "Make sure you're using a while loop.",
@@ -1073,21 +1057,21 @@ while (index < scores.length) {
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration",
     },
     validate: function (code, output) {
-      if (!code.includes("for")) {
+      if (!/\bfor\s*\(/.test(code)) {
         return {
           success: false,
           message:
             "Make sure you're using a FOR loop for finding the highest score.",
         };
       }
-      if (!code.includes("of")) {
+      if (!/for\s*\([^)]*\bof\b/.test(code)) {
         return {
           success: false,
           message:
             "Make sure you're using a FOR...OF loop for filtering passing scores.",
         };
       }
-      if (!code.includes("while")) {
+      if (!/\bwhile\s*\(/.test(code)) {
         return {
           success: false,
           message:

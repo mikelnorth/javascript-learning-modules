@@ -18,50 +18,45 @@ fruits.forEach((fruit, index) => {
   console.log(index + ': ' + fruit);
 });`,
     instruction:
-      "Use forEach() to create an array called 'doubled' containing each number from 'numbers' multiplied by 2.",
+      "Use forEach() to add each number from 'numbers' to the variable 'total' (which starts at 0).",
     starterCode: `// Your code here
 const numbers = [2, 4, 6, 8];
-const doubled = [];`,
+let total = 0;`,
     solution: `const numbers = [2, 4, 6, 8];
-const doubled = [];
+let total = 0;
 numbers.forEach(num => {
-  doubled.push(num * 2);
+  total += num;
 });`,
-    watchVariables: ["doubled"],
+    watchVariables: ["total"],
     links: {
       w3schools: "https://www.w3schools.com/jsref/jsref_foreach.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach",
     },
-    validate: function (code, output) {
-      if (!code.includes("forEach")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".forEach(")) {
         return {
           success: false,
           message: "Make sure you're using the forEach() method.",
         };
       }
-      const doubledMatch = output.match(/doubled:\s*\[([\s\S]*?)\]/);
-      if (!doubledMatch) {
-        return { success: false, message: "Could not find the doubled array." };
+      const vars = (ctx && ctx.vars) || {};
+      const total = vars.total;
+      if (typeof total !== "number") {
+        return { success: false, message: "Could not find the total variable." };
       }
-      const doubledValue = doubledMatch[0];
-      const hasCorrect =
-        doubledValue.includes("4") &&
-        doubledValue.includes("8") &&
-        doubledValue.includes("12") &&
-        doubledValue.includes("16");
-      if (hasCorrect) {
+      if (total === 20) {
         return {
           success: true,
-          message: "Perfect! You've mastered forEach()!",
+          message: "Perfect! You've used forEach() for a side effect!",
         };
       }
       return {
         success: false,
-        message: "The doubled array should contain [4, 8, 12, 16].",
+        message: "The total should be 20 (2 + 4 + 6 + 8). Add each num to total inside the forEach callback.",
       };
     },
-    hint: "forEach() calls a function for each element. Use it to push num * 2 into the doubled array.",
-    solutionHint: "Use: numbers.forEach(num => { doubled.push(num * 2); });",
+    hint: "forEach() calls a function for each element. Inside that function, add num to total using +=.",
+    solutionHint: "Use: numbers.forEach(num => { total += num; });",
   },
   {
     id: 2,
@@ -72,9 +67,9 @@ numbers.forEach(num => {
     example: `const letters = ['a', 'b', 'c'];
 const indexed = [];
 letters.forEach((letter, index) => {
-  indexed.push(index + '-' + letter);
+  indexed.push(index + ': ' + letter);
 });
-console.log(indexed); // ['0-a', '1-b', '2-c']`,
+console.log(indexed); // ['0: a', '1: b', '2: c']`,
     instruction:
       "Use forEach() with index to create 'indexed' array containing strings like '0: first', '1: second', etc.",
     starterCode: `// Your code here
@@ -90,26 +85,20 @@ items.forEach((item, index) => {
       w3schools: "https://www.w3schools.com/jsref/jsref_foreach.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach",
     },
-    validate: function (code, output) {
-      if (!code.includes("forEach")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".forEach(")) {
         return {
           success: false,
           message: "Make sure you're using the forEach() method.",
         };
       }
-      const indexedMatch = output.match(/indexed:\s*\[([\s\S]*?)\]/);
-      if (!indexedMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const indexed = vars.indexed;
+      if (!Array.isArray(indexed)) {
         return { success: false, message: "Could not find the indexed array." };
       }
-      const indexedValue = indexedMatch[0];
-      const hasCorrect =
-        indexedValue.includes("0") &&
-        indexedValue.includes("first") &&
-        indexedValue.includes("1") &&
-        indexedValue.includes("second") &&
-        indexedValue.includes("2") &&
-        indexedValue.includes("third");
-      if (hasCorrect) {
+      if (same(indexed, ["0: first", "1: second", "2: third"])) {
         return {
           success: true,
           message: "Excellent! You've used forEach() with index parameter!",
@@ -118,7 +107,7 @@ items.forEach((item, index) => {
       return {
         success: false,
         message:
-          "The indexed array should contain strings with index: value format.",
+          "The indexed array should be exactly ['0: first', '1: second', '2: third'] (index, colon, space, value).",
       };
     },
     hint: "The forEach callback can take two parameters: (element, index). Combine them into a string.",
@@ -138,10 +127,10 @@ const squared = numbers.map(num => num * num);
 console.log(squared); // [1, 4, 9, 16]
 console.log(numbers); // [1, 2, 3, 4] - unchanged!`,
     instruction:
-      "Use map() to create a 'tripled' array where each number is multiplied by 3.",
+      "Use map() to create a 'tripled' array where each number is multiplied by 3. Replace the commented line with your own.",
     starterCode: `// Your code here
 const numbers = [2, 4, 6];
-const tripled = ;`,
+// const tripled = ... ;  <- fill this in`,
     solution: `const numbers = [2, 4, 6];
 const tripled = numbers.map(num => num * 3);`,
     watchVariables: ["tripled"],
@@ -192,10 +181,10 @@ console.log(upper); // ['HELLO', 'WORLD']
 const lengths = words.map(word => word.length);
 console.log(lengths); // [5, 5]`,
     instruction:
-      "Use map() to create 'lengths' array containing the length of each word.",
+      "Use map() to create 'lengths' array containing the length of each word. Replace the commented line with your own.",
     starterCode: `// Your code here
 const words = ['cat', 'elephant', 'dog'];
-const lengths = ;`,
+// const lengths = ... ;  <- fill this in`,
     solution: `const words = ['cat', 'elephant', 'dog'];
 const lengths = words.map(word => word.length);`,
     watchVariables: ["lengths"],
@@ -203,22 +192,20 @@ const lengths = words.map(word => word.length);`,
       w3schools: "https://www.w3schools.com/jsref/jsref_map.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
     },
-    validate: function (code, output) {
-      if (!code.includes("map")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".map(")) {
         return {
           success: false,
           message: "Make sure you're using the map() method.",
         };
       }
-      const lengthsMatch = output.match(/lengths:\s*\[([\s\S]*?)\]/);
-      if (!lengthsMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const lengths = vars.lengths;
+      if (!Array.isArray(lengths)) {
         return { success: false, message: "Could not find the lengths array." };
       }
-      const lengthsValue = lengthsMatch[0];
-      const hasCorrect =
-        lengthsValue.includes("3") &&
-        lengthsValue.includes("8") &&
-        lengthsValue.indexOf("3") < lengthsValue.indexOf("8");
+      const hasCorrect = same(lengths, [3, 8, 3]);
       if (hasCorrect) {
         return {
           success: true,
@@ -247,14 +234,14 @@ const lengths = words.map(word => word.length);`,
 const names = users.map(user => user.name);
 console.log(names); // ['Alice', 'Bob']`,
     instruction:
-      "Use map() to extract just the 'name' property from each person and create a 'names' array.",
+      "Use map() to extract just the 'name' property from each person and create a 'names' array. Replace the commented line with your own.",
     starterCode: `// Your code here
 const people = [
   { name: 'John', age: 30 },
   { name: 'Jane', age: 25 },
   { name: 'Joe', age: 35 }
 ];
-const names = ;`,
+// const names = ... ;  <- fill this in`,
     solution: `const people = [
   { name: 'John', age: 30 },
   { name: 'Jane', age: 25 },
@@ -315,10 +302,10 @@ console.log(evens); // [2, 4, 6]
 const bigNumbers = numbers.filter(num => num > 3);
 console.log(bigNumbers); // [4, 5, 6]`,
     instruction:
-      "Use filter() to create an array called 'adults' containing only people 18 or older.",
+      "Use filter() to create an array called 'adults' containing only people 18 or older. Replace the commented line with your own.",
     starterCode: `// Your code here
 const ages = [15, 22, 17, 30, 12, 25];
-const adults = ;`,
+// const adults = ... ;  <- fill this in`,
     solution: `const ages = [15, 22, 17, 30, 12, 25];
 const adults = ages.filter(age => age >= 18);`,
     watchVariables: ["adults"],
@@ -374,10 +361,10 @@ console.log(longWords); // ['elephant']
 const startsWithA = words.filter(word => word.startsWith('a'));
 console.log(startsWithA); // ['ant']`,
     instruction:
-      "Use filter() to create 'shortWords' containing only words with 5 or fewer letters.",
+      "Use filter() to create 'shortWords' containing only words with 5 or fewer letters. Replace the commented line with your own.",
     starterCode: `// Your code here
 const words = ['hello', 'hi', 'goodbye', 'bye', 'world'];
-const shortWords = ;`,
+// const shortWords = ... ;  <- fill this in`,
     solution: `const words = ['hello', 'hi', 'goodbye', 'bye', 'world'];
 const shortWords = words.filter(word => word.length <= 5);`,
     watchVariables: ["shortWords"],
@@ -436,10 +423,10 @@ const result = numbers
   .map(num => num * 10);
 console.log(result); // [40, 50, 60]`,
     instruction:
-      "First filter for numbers > 5, then map to square them. Store in 'result'.",
+      "First filter for numbers > 5, then map to square them. Store in 'result'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const numbers = [2, 6, 3, 9, 4, 10];
-const result = ;`,
+// const result = ... ;  <- fill this in`,
     solution: `const numbers = [2, 6, 3, 9, 4, 10];
 const result = numbers.filter(num => num > 5).map(num => num * num);`,
     watchVariables: ["result"],
@@ -447,27 +434,20 @@ const result = numbers.filter(num => num > 5).map(num => num * num);`,
       w3schools: "https://www.w3schools.com/jsref/jsref_map.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
     },
-    validate: function (code, output) {
-      if (!code.includes("filter") || !code.includes("map")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".filter(") || !code.includes(".map(")) {
         return {
           success: false,
           message: "Make sure you're using both filter() and map() methods.",
         };
       }
-      const resultMatch = output.match(/result:\s*\[([\s\S]*?)\]/);
-      if (!resultMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const result = vars.result;
+      if (!Array.isArray(result)) {
         return { success: false, message: "Could not find the result array." };
       }
-      const resultValue = resultMatch[0];
-      const hasCorrect =
-        resultValue.includes("36") &&
-        resultValue.includes("81") &&
-        resultValue.includes("100");
-      const noSmall =
-        !resultValue.includes("4") &&
-        !resultValue.includes("9") &&
-        !resultValue.includes("16");
-      if (hasCorrect && noSmall) {
+      if (same(result, [36, 81, 100])) {
         return {
           success: true,
           message: "Incredible! You've chained filter() and map()!",
@@ -501,10 +481,10 @@ console.log(sum); // 10
 // Third: acc=3, num=3 -> return 6
 // Fourth: acc=6, num=4 -> return 10`,
     instruction:
-      "Use reduce() to calculate the sum of all numbers and store in 'total'.",
+      "Use reduce() to calculate the sum of all numbers and store in 'total'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const prices = [10, 25, 5, 30];
-const total = ;`,
+// const total = ... ;  <- fill this in`,
     solution: `const prices = [10, 25, 5, 30];
 const total = prices.reduce((acc, price) => acc + price, 0);`,
     watchVariables: ["total"],
@@ -547,19 +527,19 @@ const total = prices.reduce((acc, price) => acc + price, 0);`,
     title: "Exercise 10: reduce() - Find Maximum",
     category: "reduce",
     description:
-      "reduce() can be used to find maximum/minimum values, build objects, or perform any accumulation operation.",
+      "reduce() can be used to find maximum/minimum values, build objects, or perform any accumulation operation. When finding a maximum, start the accumulator at the first element (numbers[0]) rather than 0, otherwise an array of all-negative numbers would wrongly return 0.",
     example: `const numbers = [5, 12, 8, 3, 20, 7];
 const max = numbers.reduce((acc, num) => {
   return num > acc ? num : acc;
-}, 0);
+}, numbers[0]);
 console.log(max); // 20`,
     instruction:
-      "Use reduce() to find the highest number and store in 'highest'.",
+      "Use reduce() to find the highest number and store in 'highest'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const scores = [85, 92, 78, 95, 88];
-const highest = ;`,
+// const highest = ... ;  <- fill this in`,
     solution: `const scores = [85, 92, 78, 95, 88];
-const highest = scores.reduce((acc, score) => score > acc ? score : acc, 0);`,
+const highest = scores.reduce((acc, score) => score > acc ? score : acc, scores[0]);`,
     watchVariables: ["highest"],
     links: {
       w3schools: "https://www.w3schools.com/jsref/jsref_reduce.asp",
@@ -588,9 +568,9 @@ const highest = scores.reduce((acc, score) => score > acc ? score : acc, 0);`,
       }
       return { success: false, message: "The highest value should be 95." };
     },
-    hint: "Compare each score to the accumulator. Return the larger one using a ternary operator (condition ? ifTrue : ifFalse).",
+    hint: "Compare each score to the accumulator. Return the larger one using a ternary operator (condition ? ifTrue : ifFalse). Start the accumulator at scores[0].",
     solutionHint:
-      "Use: const highest = scores.reduce((acc, score) => score > acc ? score : acc, 0);",
+      "Use: const highest = scores.reduce((acc, score) => score > acc ? score : acc, scores[0]);",
   },
   {
     id: 11,
@@ -605,10 +585,10 @@ const count = fruits.reduce((acc, fruit) => {
 }, {});
 console.log(count); // { apple: 2, banana: 2, cherry: 1 }`,
     instruction:
-      "Use reduce() to count how many times each letter appears. Store in 'count' object.",
+      "Use reduce() to count how many times each letter appears. Store in 'count' object. Replace the commented line with your own.",
     starterCode: `// Your code here
 const letters = ['a', 'b', 'a', 'c', 'b', 'a'];
-const count = ;`,
+// const count = ... ;  <- fill this in`,
     solution: `const letters = ['a', 'b', 'a', 'c', 'b', 'a'];
 const count = letters.reduce((acc, letter) => {
   acc[letter] = (acc[letter] || 0) + 1;
@@ -666,17 +646,17 @@ console.log(combined); // [1, 2, 3, 4, 5, 6]
 const withExtra = [...arr1, 99, ...arr2];
 console.log(withExtra); // [1, 2, 3, 99, 4, 5, 6]`,
     instruction:
-      "Use the spread operator to combine fruits and vegetables into one 'allFood' array.",
+      "Use the spread operator to combine fruits and vegetables into one 'allFood' array. Replace the commented line with your own.",
     starterCode: `// Your code here
 const fruits = ['apple', 'banana'];
 const vegetables = ['carrot', 'broccoli'];
-const allFood = ;`,
+// const allFood = ... ;  <- fill this in`,
     solution: `const fruits = ['apple', 'banana'];
 const vegetables = ['carrot', 'broccoli'];
 const allFood = [...fruits, ...vegetables];`,
     watchVariables: ["allFood"],
     links: {
-      w3schools: "https://www.w3schools.com/react/react_es6_spread.asp",
+      w3schools: "https://www.w3schools.com/js/js_es6.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax",
     },
     validate: function (code, output) {
@@ -728,15 +708,15 @@ console.log(copy);     // [1, 2, 3, 4]
 const extended = [...original, 4, 5];
 console.log(extended); // [1, 2, 3, 4, 5]`,
     instruction:
-      "Use spread to create a copy of 'original' called 'extended' that also includes the number 100 at the end.",
+      "Use spread to create a copy of 'original' called 'extended' that also includes the number 100 at the end. Replace the commented line with your own.",
     starterCode: `// Your code here
 const original = [10, 20, 30];
-const extended = ;`,
+// const extended = ... ;  <- fill this in`,
     solution: `const original = [10, 20, 30];
 const extended = [...original, 100];`,
     watchVariables: ["original", "extended"],
     links: {
-      w3schools: "https://www.w3schools.com/react/react_es6_spread.asp",
+      w3schools: "https://www.w3schools.com/js/js_es6.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax",
     },
     validate: function (code, output) {
@@ -788,15 +768,15 @@ console.log(max); // 8
 const min = Math.min(...numbers);
 console.log(min); // 1`,
     instruction:
-      "Use spread with Math.max() to find the maximum number and store in 'maximum'.",
+      "Use spread with Math.max() to find the maximum number and store in 'maximum'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const numbers = [45, 23, 67, 12, 89, 34];
-const maximum = ;`,
+// const maximum = ... ;  <- fill this in`,
     solution: `const numbers = [45, 23, 67, 12, 89, 34];
 const maximum = Math.max(...numbers);`,
     watchVariables: ["maximum"],
     links: {
-      w3schools: "https://www.w3schools.com/react/react_es6_spread.asp",
+      w3schools: "https://www.w3schools.com/js/js_es6.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax",
     },
     validate: function (code, output) {
@@ -850,10 +830,10 @@ numbers.forEach(n => console.log(n * 2)); // prints 2, 4, 6
 const result = numbers.forEach(n => n * 2);
 console.log(result); // undefined`,
     instruction:
-      "Create 'squared' using map() and log each element using forEach() (two separate operations).",
+      "Create 'squared' using map() and log each element using forEach() (two separate operations). Replace the commented line with your own.",
     starterCode: `// Your code here
 const numbers = [2, 3, 4];
-const squared = ;`,
+// const squared = ... ;  <- fill this in`,
     solution: `const numbers = [2, 3, 4];
 const squared = numbers.map(n => n * n);
 squared.forEach(n => console.log(n));`,
@@ -862,35 +842,41 @@ squared.forEach(n => console.log(n));`,
       w3schools: "https://www.w3schools.com/jsref/jsref_map.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
     },
-    validate: function (code, output) {
-      if (!code.includes("map")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".map(")) {
         return {
           success: false,
           message: "Make sure you're using map() to create squared array.",
         };
       }
-      if (!code.includes("forEach")) {
+      if (!code.includes(".forEach(")) {
         return {
           success: false,
           message: "Make sure you're also using forEach() to log values.",
         };
       }
-      const squaredMatch = output.match(/squared:\s*\[([\s\S]*?)\]/);
-      if (!squaredMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const squared = vars.squared;
+      if (!Array.isArray(squared)) {
         return { success: false, message: "Could not find the squared array." };
       }
-      const squaredValue = squaredMatch[0];
-      const hasCorrect =
-        squaredValue.includes("4") &&
-        squaredValue.includes("9") &&
-        squaredValue.includes("16");
-      // Check that console.log was called (values appear outside the squared array)
+      const hasCorrect = same(squared, [4, 9, 16]);
+      // Check that forEach actually logged: look only at console.log output, not the variable dump
+      const logs = (ctx && typeof ctx.logs === "string") ? ctx.logs : "";
       const hasLogged =
-        output.includes("4") && output.includes("9") && output.includes("16");
+        /\b4\b/.test(logs) && /\b9\b/.test(logs) && /\b16\b/.test(logs);
       if (hasCorrect && hasLogged) {
         return {
           success: true,
           message: "Excellent! You understand map() vs forEach()!",
+        };
+      }
+      if (hasCorrect && !hasLogged) {
+        return {
+          success: false,
+          message:
+            "squared is correct, but nothing was logged. Use forEach() with console.log to print each value.",
         };
       }
       return {
@@ -916,10 +902,10 @@ const result = numbers
   .reduce((acc, n) => acc + n, 0); // Sum: 120
 console.log(result); // 120`,
     instruction:
-      "Filter ages >= 21, map to add 5 years to each, then reduce to find the average. Store in 'avgAge'.",
+      "Filter ages >= 21, map to add 5 years to each, then use reduce to sum the results and divide that sum by the count to get the average. Store the average in 'avgAge'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const ages = [18, 25, 30, 16, 35, 20];
-const avgAge = ;`,
+// const avgAge = ... ;  <- fill this in`,
     solution: `const ages = [18, 25, 30, 16, 35, 20];
 const filtered = ages.filter(age => age >= 21);
 const older = filtered.map(age => age + 5);
@@ -991,14 +977,14 @@ const total = products
   .reduce((sum, price) => sum + price, 0);
 console.log(total); // 510`,
     instruction:
-      "Process the cart: (1) Filter for items with quantity > 0, (2) Map to calculate total per item (price * quantity), (3) Reduce to get grand total. Store in 'grandTotal'.",
+      "Process the cart: (1) Filter for items with quantity > 0, (2) Map to calculate total per item (price * quantity), (3) Reduce to get grand total. Store in 'grandTotal'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const cart = [
   { item: 'apple', price: 2, quantity: 3 },
   { item: 'banana', price: 1, quantity: 0 },
   { item: 'orange', price: 3, quantity: 2 }
 ];
-const grandTotal = ;`,
+// const grandTotal = ... ;  <- fill this in`,
     solution: `const cart = [
   { item: 'apple', price: 2, quantity: 3 },
   { item: 'banana', price: 1, quantity: 0 },
@@ -1007,7 +993,7 @@ const grandTotal = ;`,
 const grandTotal = cart
   .filter(item => item.quantity > 0)
   .map(item => item.price * item.quantity)
-  .reduce((sum, total) => sum + total, 0);`,
+  .reduce((sum, subtotal) => sum + subtotal, 0);`,
     watchVariables: ["grandTotal"],
     links: {
       w3schools: "https://www.w3schools.com/jsref/jsref_map.asp",
@@ -1056,6 +1042,6 @@ const grandTotal = cart
     },
     hint: "Chain them: cart.filter(...).map(...).reduce(...). Filter quantity > 0, map to price * quantity, reduce to sum.",
     solutionHint:
-      "cart.filter(item => item.quantity > 0).map(item => item.price * item.quantity).reduce((sum, total) => sum + total, 0)",
+      "cart.filter(item => item.quantity > 0).map(item => item.price * item.quantity).reduce((sum, subtotal) => sum + subtotal, 0)",
   },
 ];

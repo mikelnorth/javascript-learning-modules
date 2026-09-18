@@ -12,19 +12,19 @@ console.log(fruits.at(0));   // 'apple' (first)
 console.log(fruits.at(-1));  // 'date' (last)
 console.log(fruits.at(-2));  // 'cherry' (second to last)`,
     instruction:
-      "Use at() to get the last element from 'numbers' and store it in 'lastItem'.",
+      "Use at() to get the last element from 'numbers' and store it in 'lastItem'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const numbers = [10, 20, 30, 40, 50];
-const lastItem = ;`,
+// const lastItem = ... ;  <- fill this in`,
     solution: `const numbers = [10, 20, 30, 40, 50];
 const lastItem = numbers.at(-1);`,
     watchVariables: ["lastItem"],
     links: {
-      w3schools: "https://www.w3schools.com/jsref/jsref_at.asp",
+      w3schools: "https://www.w3schools.com/jsref/jsref_array_at.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at",
     },
     validate: function (code, output) {
-      if (!code.includes("at")) {
+      if (!code.includes(".at(")) {
         return {
           success: false,
           message: "Make sure you're using the at() method.",
@@ -65,10 +65,10 @@ console.log(colors.includes('blue'));   // true
 console.log(colors.includes('yellow')); // false
 console.log(colors.includes('Blue'));   // false (case-sensitive!)`,
     instruction:
-      "Use includes() to check if 'banana' exists in fruits and store the result in 'hasBanana'.",
+      "Use includes() to check if 'banana' exists in fruits and store the result in 'hasBanana'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const fruits = ['apple', 'banana', 'cherry'];
-const hasBanana = ;`,
+// const hasBanana = ... ;  <- fill this in`,
     solution: `const fruits = ['apple', 'banana', 'cherry'];
 const hasBanana = fruits.includes('banana');`,
     watchVariables: ["hasBanana"],
@@ -120,10 +120,10 @@ console.log(sentence); // 'Hello World !'
 const csv = words.join(',');
 console.log(csv); // 'Hello,World,!'`,
     instruction:
-      "Use join() to create a sentence from 'words' separated by spaces. Store in 'sentence'.",
+      "Use join() to create a sentence from 'words' separated by spaces. Store in 'sentence'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const words = ['JavaScript', 'is', 'awesome'];
-const sentence = ;`,
+// const sentence = ... ;  <- fill this in`,
     solution: `const words = ['JavaScript', 'is', 'awesome'];
 const sentence = words.join(' ');`,
     watchVariables: ["sentence"],
@@ -175,10 +175,10 @@ const csv = 'a,b,c';
 const letters = csv.split(',');
 console.log(letters); // ['a', 'b', 'c']`,
     instruction:
-      "Use split() to break the email into an array split by '@'. Store in 'parts'.",
+      "Use split() to break the email into an array split by '@'. Store in 'parts'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const email = 'user@example.com';
-const parts = ;`,
+// const parts = ... ;  <- fill this in`,
     solution: `const email = 'user@example.com';
 const parts = email.split('@');`,
     watchVariables: ["parts"],
@@ -233,10 +233,10 @@ const users = [
 const user = users.find(u => u.age > 28);
 console.log(user); // { name: 'Jane', age: 30 }`,
     instruction:
-      "Use find() to get the first number greater than 50 and store in 'bigNumber'.",
+      "Use find() to get the first number greater than 50 and store in 'bigNumber'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const numbers = [10, 45, 60, 30, 75];
-const bigNumber = ;`,
+// const bigNumber = ... ;  <- fill this in`,
     solution: `const numbers = [10, 45, 60, 30, 75];
 const bigNumber = numbers.find(num => num > 50);`,
     watchVariables: ["bigNumber"],
@@ -245,7 +245,7 @@ const bigNumber = numbers.find(num => num > 50);`,
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find",
     },
     validate: function (code, output) {
-      if (!code.includes("find")) {
+      if (!code.includes(".find(")) {
         return {
           success: false,
           message: "Make sure you're using the find() method.",
@@ -287,14 +287,14 @@ const bigNumber = numbers.find(num => num > 50);`,
 const product = products.find(p => p.id === 2);
 console.log(product); // { id: 2, name: 'Pen', price: 5 }`,
     instruction:
-      "Use find() to get the person named 'Alice' and store in 'alice'.",
+      "Use find() to get the person named 'Alice' and store in 'alice'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const people = [
   { name: 'John', age: 30 },
   { name: 'Alice', age: 25 },
   { name: 'Bob', age: 35 }
 ];
-const alice = ;`,
+// const alice = ... ;  <- fill this in`,
     solution: `const people = [
   { name: 'John', age: 30 },
   { name: 'Alice', age: 25 },
@@ -307,7 +307,7 @@ const alice = people.find(person => person.name === 'Alice');`,
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find",
     },
     validate: function (code, output) {
-      if (!code.includes("find")) {
+      if (!code.includes(".find(")) {
         return {
           success: false,
           message: "Make sure you're using the find() method.",
@@ -353,10 +353,10 @@ console.log(index); // 1 (12 is at index 1)
 const notFound = numbers.findIndex(num => num > 200);
 console.log(notFound); // -1 (nothing matches)`,
     instruction:
-      "Use findIndex() to get the index of the first even number and store in 'evenIndex'.",
+      "Use findIndex() to get the index of the first even number and store in 'evenIndex'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const numbers = [1, 3, 5, 8, 9, 12];
-const evenIndex = ;`,
+// const evenIndex = ... ;  <- fill this in`,
     solution: `const numbers = [1, 3, 5, 8, 9, 12];
 const evenIndex = numbers.findIndex(num => num % 2 === 0);`,
     watchVariables: ["evenIndex"],
@@ -365,7 +365,7 @@ const evenIndex = numbers.findIndex(num => num % 2 === 0);`,
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex",
     },
     validate: function (code, output) {
-      if (!code.includes("findIndex")) {
+      if (!code.includes(".findIndex(")) {
         return {
           success: false,
           message: "Make sure you're using the findIndex() method.",
@@ -414,41 +414,44 @@ console.log(numbers); // [1, 5, 10, 25, 40, 1000] - correct!`,
     instruction:
       "Use sort() with a compare function to sort 'scores' from lowest to highest. The original array should be modified.",
     starterCode: `// Your code here
-const scores = [85, 42, 95, 78, 63];`,
-    solution: `const scores = [85, 42, 95, 78, 63];
+const scores = [85, 42, 100, 7, 63];`,
+    solution: `const scores = [85, 42, 100, 7, 63];
 scores.sort((a, b) => a - b);`,
     watchVariables: ["scores"],
     links: {
       w3schools: "https://www.w3schools.com/jsref/jsref_sort.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
     },
-    validate: function (code, output) {
-      if (!code.includes("sort")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".sort(")) {
         return {
           success: false,
           message: "Make sure you're using the sort() method.",
         };
       }
-      const scoresMatch = output.match(/scores:\s*\[([\s\S]*?)\]/);
-      if (!scoresMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const scores = vars.scores;
+      if (!Array.isArray(scores)) {
         return { success: false, message: "Could not find the scores array." };
       }
-      const scoresValue = scoresMatch[0];
-      const isSorted =
-        scoresValue.indexOf("42") < scoresValue.indexOf("63") &&
-        scoresValue.indexOf("63") < scoresValue.indexOf("78") &&
-        scoresValue.indexOf("78") < scoresValue.indexOf("85") &&
-        scoresValue.indexOf("85") < scoresValue.indexOf("95");
-      if (isSorted) {
+      if (same(scores, [7, 42, 63, 85, 100])) {
         return {
           success: true,
           message: "Excellent! You've sorted numbers correctly!",
         };
       }
+      if (same(scores, [100, 42, 63, 7, 85])) {
+        return {
+          success: false,
+          message:
+            "The array is sorted as strings ('100' comes before '42' because '1' < '4'). The default sort() compares as text, so pass a compare function that subtracts the numbers.",
+        };
+      }
       return {
         success: false,
         message:
-          "The scores should be sorted from lowest to highest: [42, 63, 78, 85, 95].",
+          "The scores should be sorted from lowest to highest: [7, 42, 63, 85, 100].",
       };
     },
     hint: "Don't forget the compare function! Use (a, b) => a - b for ascending order.",
@@ -465,38 +468,33 @@ const sorted = numbers.toSorted((a, b) => a - b);
 console.log(sorted);  // [1, 1, 3, 4, 5]
 console.log(numbers); // [3, 1, 4, 1, 5] - unchanged!`,
     instruction:
-      "Use toSorted() to create a sorted copy called 'sorted' (descending order: high to low). The original should be unchanged.",
+      "Use toSorted() to create a sorted copy called 'sorted' (descending order: high to low). The original should be unchanged. Replace the commented line with your own.",
     starterCode: `// Your code here
-const original = [5, 2, 8, 1, 9];
-const sorted = ;`,
-    solution: `const original = [5, 2, 8, 1, 9];
+const original = [5, 2, 100, 1, 9];
+// const sorted = ... ;  <- fill this in`,
+    solution: `const original = [5, 2, 100, 1, 9];
 const sorted = original.toSorted((a, b) => b - a);`,
     watchVariables: ["original", "sorted"],
     links: {
-      w3schools: "https://www.w3schools.com/jsref/jsref_tosorted.asp",
+      w3schools: "https://www.w3schools.com/jsref/jsref_array_tosorted.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted",
     },
-    validate: function (code, output) {
-      if (!code.includes("toSorted")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".toSorted(")) {
         return {
           success: false,
           message: "Make sure you're using the toSorted() method (not sort).",
         };
       }
-      const originalMatch = output.match(/original:\s*\[([\s\S]*?)\]/);
-      const sortedMatch = output.match(/sorted:\s*\[([\s\S]*?)\]/);
-      if (!originalMatch || !sortedMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const original = vars.original;
+      const sorted = vars.sorted;
+      if (!Array.isArray(original) || !Array.isArray(sorted)) {
         return { success: false, message: "Could not find both arrays." };
       }
-      const originalValue = originalMatch[0];
-      const sortedValue = sortedMatch[0];
-      const originalUnchanged =
-        originalValue.indexOf("5") < originalValue.indexOf("2");
-      const sortedDescending =
-        sortedValue.indexOf("9") < sortedValue.indexOf("8") &&
-        sortedValue.indexOf("8") < sortedValue.indexOf("5") &&
-        sortedValue.indexOf("5") < sortedValue.indexOf("2") &&
-        sortedValue.indexOf("2") < sortedValue.indexOf("1");
+      const originalUnchanged = same(original, [5, 2, 100, 1, 9]);
+      const sortedDescending = same(sorted, [100, 9, 5, 2, 1]);
       if (originalUnchanged && sortedDescending) {
         return {
           success: true,
@@ -504,10 +502,24 @@ const sorted = original.toSorted((a, b) => b - a);`,
             "Perfect! You've created a sorted copy without mutating the original!",
         };
       }
+      if (!originalUnchanged) {
+        return {
+          success: false,
+          message:
+            "The original array was changed. toSorted() returns a new array and leaves the original alone, so make sure you're not calling sort() on it.",
+        };
+      }
+      if (same(sorted, [1, 100, 2, 5, 9]) || same(sorted, [9, 5, 2, 100, 1])) {
+        return {
+          success: false,
+          message:
+            "The copy is sorted as strings ('100' sits between '1' and '2'). Without a compare function toSorted() compares as text, so pass (a, b) => b - a.",
+        };
+      }
       return {
         success: false,
         message:
-          "The sorted array should be [9, 8, 5, 2, 1] (descending) and original should be unchanged.",
+          "The sorted array should be [100, 9, 5, 2, 1] (descending) and original should be unchanged.",
       };
     },
     hint: "Use toSorted() with (a, b) => b - a for descending order. This creates a new array.",
@@ -573,36 +585,34 @@ const reversed = original.toReversed();
 console.log(reversed); // [5, 4, 3, 2, 1]
 console.log(original); // [1, 2, 3, 4, 5] - unchanged!`,
     instruction:
-      "Use toReversed() to create a reversed copy called 'reversed'. The original should be unchanged.",
+      "Use toReversed() to create a reversed copy called 'reversed'. The original should be unchanged. Replace the commented line with your own.",
     starterCode: `// Your code here
 const original = ['a', 'b', 'c', 'd'];
-const reversed = ;`,
+// const reversed = ... ;  <- fill this in`,
     solution: `const original = ['a', 'b', 'c', 'd'];
 const reversed = original.toReversed();`,
     watchVariables: ["original", "reversed"],
     links: {
-      w3schools: "https://www.w3schools.com/jsref/jsref_toreversed.asp",
+      w3schools: "https://www.w3schools.com/jsref/jsref_array_toreversed.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed",
     },
-    validate: function (code, output) {
-      if (!code.includes("toReversed")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".toReversed(")) {
         return {
           success: false,
           message:
             "Make sure you're using the toReversed() method (not reverse).",
         };
       }
-      const originalMatch = output.match(/original:\s*\[([\s\S]*?)\]/);
-      const reversedMatch = output.match(/reversed:\s*\[([\s\S]*?)\]/);
-      if (!originalMatch || !reversedMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const original = vars.original;
+      const reversed = vars.reversed;
+      if (!Array.isArray(original) || !Array.isArray(reversed)) {
         return { success: false, message: "Could not find both arrays." };
       }
-      const originalValue = originalMatch[0];
-      const reversedValue = reversedMatch[0];
-      const originalUnchanged =
-        originalValue.indexOf("a") < originalValue.indexOf("b");
-      const reversedCorrect =
-        reversedValue.indexOf("d") < reversedValue.indexOf("a");
+      const originalUnchanged = same(original, ["a", "b", "c", "d"]);
+      const reversedCorrect = same(reversed, ["d", "c", "b", "a"]);
       if (originalUnchanged && reversedCorrect) {
         return {
           success: true,
@@ -635,14 +645,14 @@ console.log(Array.isArray(123));          // false
 // typeof is unreliable for arrays!
 console.log(typeof [1, 2, 3]); // 'object' - not helpful!`,
     instruction:
-      "Use Array.isArray() to check three values and store results in 'check1', 'check2', 'check3'.",
+      "Use Array.isArray() to check three values and store results in 'check1', 'check2', 'check3'. Replace the commented lines with your own.",
     starterCode: `// Your code here
 const value1 = [1, 2, 3];
 const value2 = 'hello';
 const value3 = { name: 'test' };
-const check1 = ;
-const check2 = ;
-const check3 = ;`,
+// const check1 = ... ;  <- fill this in
+// const check2 = ... ;  <- fill this in
+// const check3 = ... ;  <- fill this in`,
     solution: `const value1 = [1, 2, 3];
 const value2 = 'hello';
 const value3 = { name: 'test' };
@@ -705,10 +715,10 @@ const upper = fruits.map(f => f.toUpperCase());
 const newCsv = upper.join(',');
 console.log(newCsv); // 'APPLE,BANANA,CHERRY'`,
     instruction:
-      "Split 'sentence' by spaces, reverse the word order, then join back with spaces. Store in 'reversed'.",
+      "Split 'sentence' by spaces, reverse the word order, then join back with spaces. Store in 'reversed'. Replace the commented line with your own.",
     starterCode: `// Your code here
 const sentence = 'Hello World JavaScript';
-const reversed = ;`,
+// const reversed = ... ;  <- fill this in`,
     solution: `const sentence = 'Hello World JavaScript';
 const reversed = sentence.split(' ').reverse().join(' ');`,
     watchVariables: ["reversed"],
@@ -763,11 +773,11 @@ console.log(first); // 30 (first match)
 const all = numbers.filter(n => n > 25);
 console.log(all); // [30, 40, 50] (all matches)`,
     instruction:
-      "Use find() to get 'firstEven' (first even number) and filter() to get 'allEvens' (all even numbers).",
+      "Use find() to get 'firstEven' (first even number) and filter() to get 'allEvens' (all even numbers). Replace the commented lines with your own.",
     starterCode: `// Your code here
 const numbers = [1, 3, 6, 7, 8, 9, 10];
-const firstEven = ;
-const allEvens = ;`,
+// const firstEven = ... ;  <- fill this in
+// const allEvens = ... ;  <- fill this in`,
     solution: `const numbers = [1, 3, 6, 7, 8, 9, 10];
 const firstEven = numbers.find(n => n % 2 === 0);
 const allEvens = numbers.filter(n => n % 2 === 0);`,
@@ -776,25 +786,22 @@ const allEvens = numbers.filter(n => n % 2 === 0);`,
       w3schools: "https://www.w3schools.com/jsref/jsref_find.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find",
     },
-    validate: function (code, output) {
-      if (!code.includes("find") || !code.includes("filter")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".find(") || !code.includes(".filter(")) {
         return {
           success: false,
           message: "Make sure you're using both find() and filter().",
         };
       }
-      const firstEvenMatch = output.match(/firstEven:\s*(\d+)/);
-      const allEvensMatch = output.match(/allEvens:\s*\[([\s\S]*?)\]/);
-      if (!firstEvenMatch || !allEvensMatch) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const firstEven = vars.firstEven;
+      const allEvens = vars.allEvens;
+      if (typeof firstEven !== "number" || !Array.isArray(allEvens)) {
         return { success: false, message: "Could not find both variables." };
       }
-      const firstEvenValue = firstEvenMatch[1];
-      const allEvensValue = allEvensMatch[0];
-      const hasCorrectFirst = firstEvenValue === "6";
-      const hasCorrectAll =
-        allEvensValue.includes("6") &&
-        allEvensValue.includes("8") &&
-        allEvensValue.includes("10");
+      const hasCorrectFirst = firstEven === 6;
+      const hasCorrectAll = same(allEvens, [6, 8, 10]);
       if (hasCorrectFirst && hasCorrectAll) {
         return {
           success: true,
@@ -827,7 +834,7 @@ const sorted = players.toSorted((a, b) => b.score - a.score);
 const winner = sorted.at(0);
 console.log(winner.name); // 'Alice'`,
     instruction:
-      "Sort players by score (high to low) using toSorted(), then use at() to get the top 3. Store in 'top3'.",
+      "Sort players by score (high to low) using toSorted(), then use at() (or slice()) to get the top 3. Store in 'top3'. Replace the commented lines with your own.",
     starterCode: `// Your code here
 const players = [
   { name: 'Alice', score: 85 },
@@ -836,8 +843,8 @@ const players = [
   { name: 'Diana', score: 95 },
   { name: 'Eve', score: 88 }
 ];
-const sorted = ;
-const top3 = ;`,
+// const sorted = ... ;  <- fill this in
+// const top3 = ... ;  <- fill this in`,
     solution: `const players = [
   { name: 'Alice', score: 85 },
   { name: 'Bob', score: 92 },
@@ -849,48 +856,49 @@ const sorted = players.toSorted((a, b) => b.score - a.score);
 const top3 = [sorted.at(0), sorted.at(1), sorted.at(2)];`,
     watchVariables: ["top3"],
     links: {
-      w3schools: "https://www.w3schools.com/jsref/jsref_tosorted.asp",
+      w3schools: "https://www.w3schools.com/jsref/jsref_array_tosorted.asp",
       mdn: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted",
     },
-    validate: function (code, output) {
-      if (!code.includes("toSorted")) {
+    validate: function (code, output, ctx) {
+      if (!code.includes(".toSorted(")) {
         return {
           success: false,
           message: "Make sure you're using toSorted() to sort by score.",
         };
       }
-      if (!code.includes("at")) {
+      if (!code.includes(".at(") && !code.includes(".slice(")) {
         return {
           success: false,
-          message: "Make sure you're using at() to get the top 3 players.",
+          message:
+            "Make sure you're using at() (or slice()) to get the top 3 players.",
         };
       }
-      const top3Match = output.match(/top3:\s*\[([\s\S]*?)\]/);
-      if (!top3Match) {
+      const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+      const vars = (ctx && ctx.vars) || {};
+      const top3 = vars.top3;
+      if (!Array.isArray(top3)) {
         return { success: false, message: "Could not find the top3 array." };
       }
-      const top3Value = top3Match[0];
-      const hasDiana = top3Value.includes("Diana") && top3Value.includes("95");
-      const hasBob = top3Value.includes("Bob") && top3Value.includes("92");
-      const hasEve = top3Value.includes("Eve") && top3Value.includes("88");
-      const dianaBeforeBob =
-        top3Value.indexOf("Diana") < top3Value.indexOf("Bob");
-      const bobBeforeEve = top3Value.indexOf("Bob") < top3Value.indexOf("Eve");
-      if (hasDiana && hasBob && hasEve && dianaBeforeBob && bobBeforeEve) {
+      const expected = [
+        { name: "Diana", score: 95 },
+        { name: "Bob", score: 92 },
+        { name: "Eve", score: 88 },
+      ];
+      if (same(top3, expected)) {
         return {
           success: true,
           message:
-            "🎉 AMAZING! You've created a leaderboard with toSorted() and at()!",
+            "🎉 AMAZING! You've created a leaderboard with toSorted() and picked the top 3!",
         };
       }
       return {
         success: false,
         message:
-          "top3 should contain Diana (95), Bob (92), and Eve (88) in that order.",
+          "top3 should contain exactly the Diana (95), Bob (92), and Eve (88) player objects in that order.",
       };
     },
-    hint: "First toSorted() with (a, b) => b.score - a.score for descending. Then create array with sorted.at(0), sorted.at(1), sorted.at(2).",
+    hint: "First toSorted() with (a, b) => b.score - a.score for descending. Then build the top 3 with sorted.at(0), sorted.at(1), sorted.at(2), or take them all at once with sorted.slice(0, 3).",
     solutionHint:
-      "const sorted = players.toSorted((a, b) => b.score - a.score); const top3 = [sorted.at(0), sorted.at(1), sorted.at(2)];",
+      "const sorted = players.toSorted((a, b) => b.score - a.score); const top3 = [sorted.at(0), sorted.at(1), sorted.at(2)]; // or sorted.slice(0, 3)",
   },
 ];
